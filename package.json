@@ -1,0 +1,26 @@
+{
+  "name": "codePin",
+  "version": "1.0.0",
+  "description": "Group Project #2: Place to pin all your coding resources",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpraught/codePin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tpraught/codePin/issues"
+  },
+  "homepage": "https://github.com/tpraught/codePin#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.36.1"
+  }
+}
