@@ -1,0 +1,19 @@
+body {
+    background: none;
+    margin:0 auto;
+    font: normal 300 16px "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    text-align:left;
+    color: #000000;
+    line-height:1.4;
+    font-kerning: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+#logo {
+    
+}
+
+header {
+
+}
+
