@@ -23,10 +23,10 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.2",
     "mysql2": "^1.5.2",
-    "sequelize": "^4.36.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "express-session": "^1.14.2"
+    "sequelize": "^4.36.1"
   }
 }
