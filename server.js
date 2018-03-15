@@ -27,6 +27,22 @@ app.use(bodyParser.json());
 // Routes.
 require("./routes/api-routes.js")(app);
 
+app.get("/", function(req, res) {
+  res.render("index");
+});
+
+app.get("/login", function(req, res) {
+  res.render("login");
+});
+
+app.get("/add", function(req, res) {
+  res.render("addForm");
+});
+
+app.get("/update", function(req,res) {
+  res.render("updateForm");
+});
+
 // Syncing sequelize models and then starting Express
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
