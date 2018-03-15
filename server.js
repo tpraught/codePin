@@ -1,10 +1,11 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
 // Requiring our custom middleware for checking if a user is logged in
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+var isAuthenticated = require("./config/middleware/isAuthenticated");
 
 var PORT = process.env.PORT || 3000;
 
@@ -40,37 +41,37 @@ require("./routes/api-routes.js")(app);
 
 // Rendering Handlebar pages
 app.get("/", function(req, res) {
-  // If the user already has an account send them to the login page
-  if (req.user) {
-    res.redirect("index");
-  }
-  // Else send them to the signup page
-  res.redirect("signUp");
+    // If the user already has an account send them to the login page
+    if (req.user) {
+        res.redirect("index");
+    }
+    // Else send them to the signup page
+    res.redirect("signUp");
 });
 
 app.get("/login", function(req, res) {
-  // If the user already has an account send them to the members page
-  if (req.user) {
-    res.redirect("index");
-  }
-  res.render("login");
+    // If the user already has an account send them to the members page
+    if (req.user) {
+        res.redirect("index");
+    }
+    res.render("login");
 });
 
-app.get("/", isAuthenicated, function(req, res) {
-  res.render("index");
+app.get("/", isAuthenticated, function(req, res) {
+    res.render("index");
 });
 
 app.get("/add", function(req, res) {
-  res.render("addForm");
+    res.render("addForm");
 });
 
-app.get("/update", function(req,res) {
-  res.render("updateForm");
+app.get("/update", function(req, res) {
+    res.render("updateForm");
 });
 
 // Syncing sequelize models and then starting Express
 db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("App now listening at localhost:" + PORT);
-  });
+    app.listen(PORT, function() {
+        console.log("App now listening at localhost:" + PORT);
+    });
 });
