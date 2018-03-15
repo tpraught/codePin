@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_development",
+    "database": "codePin",
     "host": "localhost",
     "dialect": "mysql"
   },
