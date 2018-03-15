@@ -1,27 +1,108 @@
 // Requiring models
-// =============================================================
+// ===============================================================================================
 var db = require("../models");
 var passport = require("../config/passport");
 
 
 module.exports = function(app) {
 
-  // GET route for getting all pins
+
+  // GET route for getting all pins.
+  // ===============================================================================================
   app.get("/api/pins", function(req, res) {
     
-    db.Todo.findAll({}).then(function(dbPin) {
+    db.Pin.findAll({}).then(function(dbPin) {
       res.json(dbPin);
     });
-  }); // end of get
+  }); 
+  
+  
+  // GET rotue for retrieving a single pin.
+  // ===============================================================================================
+  app.get("/api/pins/:id", function(req, res) {
+    db.Pin.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function(dbPin) {
+      res.json(dbPin);
+    });
+  });
+  
+  
+  // GET rotue for returning pins of a specific language
+  // ===============================================================================================
+  app.get("/api/pins/language/:language", function(req, res) {
+    db.Pin.findAll({
+      where: {
+        language: req.params.language
+      }
+    })
+    .then(function(dbPin) {
+      res.json(dbPin);
+    });
+  });
 
-    // Using the passport.authenticate middleware with our local strategy.
+
+  // POST route for saving a new pin.
+  // ===============================================================================================
+  app.post("/api/pins", function(req, res) {
+    
+    db.Pin.create({
+      title: req.body.title,
+      description: req.body.description,
+      language: req.body.language,
+      media_type: req.body.media_type,
+      content: req.body.content
+    }).then(function(dbPin) {
+      res.json(dbPin);
+    });
+  }); 
+  
+  
+   // DELETE route for deleting pins.
+   // ===============================================================================================
+  app.delete("/api/pins/:id", function(req, res) {
+    
+    db.Pin.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPin) {
+      res.json(dbPin);
+    });
+
+  }); 
+
+
+  // PUT route for updating pins
+  // ===============================================================================================
+  app.put("/api/pins", function(req, res) {
+    
+    db.Pin.update({
+      title: req.body.title,
+      description: req.body.description,
+      language: req.body.language,
+      media_type: req.body.media_type,
+      content: req.body.content
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbPin) {
+      res.json(dbPin);
+    });
+  });
+
+  // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
-    res.json("/members");
+    res.json("/index");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
