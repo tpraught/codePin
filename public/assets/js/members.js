@@ -5,27 +5,25 @@ $(document).ready(function() {
       $(".member-name").text(data.email);
     });
 
-    // on-click function on the Add Pin button to display the New Pin modal
+
+    //add button to create new pin 
 
 
-    //add button to create new pin
-
-    $("#addPin").on("click", function(event){
-      event.preventDefault();
-      $("#newPinModal").modal("toggle");
-    });
-
+    
     $("#submit").on("click", function(event){
 
       event.preventDefault();
+      // $("#newPinModal").modal("hide");
+      
 
       //grab all the form data and put into newPin object
       var newPin = {
-        $("#name").val().trim(),
-        $("#description").val().trim(),
-        $("#language").val().trim(),
-        $("#snippet").val().trim()
+        name: $("#name").val.trim(),
+        description: $("#description").val().trim(),
+        language: $("#language").val().trim(),
+        snippet: $("#snippet").val().trim   
       };
+      console.log("erer");
       console.log(newPin);
     });
 
