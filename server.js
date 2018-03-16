@@ -46,7 +46,7 @@ app.get("/", function(req, res) {
         res.redirect("index");
     }
     // Else send them to the signup page
-    res.render("signUp");
+    res.render("index");
 });
 
 app.get("/login", function(req, res) {
