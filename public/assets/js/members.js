@@ -18,7 +18,7 @@ $(document).ready(function() {
 
       //grab all the form data and put into newPin object
       var newPin = {
-        name: $("#name").val.trim(),
+        name: $("#name").val().trim(),
         description: $("#description").val().trim(),
         language: $("#language").val().trim(),
         snippet: $("#snippet").val().trim   
