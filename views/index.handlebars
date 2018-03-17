@@ -36,14 +36,28 @@
 
 <!-- Modal -->
 <div class="modal fade" id="newPinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            {{!-- modal header --}}
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">New Code Pin</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        {{!-- modal header --}}
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">New Code Pin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      {{!-- modal body --}}
+      <form>
+      <div class="modal-body">          
+        <div class="container-fluid">
+            {{!-- row 1 --}}
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        {{!-- <label for="name">Name</label> --}}
+                        <input type="text" class="form-control" id="title" placeholder="Title" required>
+                    </div>      
+                </div>
             </div>
 
             {{!-- modal body --}}
@@ -93,18 +107,16 @@
                                 </div> --}}
                             </div>
                         </div>
-                        {{!-- row 3 --}}
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    {{!--
-                                    <label for="snippet">Code Snippet</label> --}}
-                                    <textarea class="form-control" id="snippet" rows="4" placeholder="Code Snippet"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    </div> --}}
+                </div>
+            </div>
+            {{!-- row 3 --}}
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        {{!-- <label for="snippet">Code Snippet</label> --}}
+                        <textarea class="form-control" id="content" rows="4" placeholder="Code Snippet"></textarea>
+                    </div>  
                 </div>
             </form>
             {{!-- modal footer --}}
