@@ -31,43 +31,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // We need to use sessions to keep track of our user's login status
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Routes.
 require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+require("./routes/user-routes.js")(app);
 
 
-// Rendering Handlebar pages
-app.get("/", function(req, res) {
-    // If the user already has an account send them to the login page
-    if (req.user) {
-        res.redirect("login");
-    }
-    // Else send them to the signup page
-    res.render("signUp");
-});
-
-app.get("/login", function(req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-        res.redirect("index");
-    }
-    res.render("login");
-});
-
-app.get("/", isAuthenticated, function(req, res) {
-    res.render("index");
-});
-
-app.get("/add", function(req, res) {
-    res.render("addForm");
-});
-
-app.get("/update", function(req, res) {
-    res.render("updateForm");
-});
 
 // Syncing sequelize models and then starting Express
 db.sequelize.sync().then(function() {
