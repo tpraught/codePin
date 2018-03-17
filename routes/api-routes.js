@@ -4,14 +4,14 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 
-module.exports = function(app) {
+module.exports = function (app) {
 
 
     // GET route for getting all pins.
     // ===============================================================================================
-    app.get("/api/pins", function(req, res) {
+    app.get("/api/pins", function (req, res) {
 
-        db.Pin.findAll({}).then(function(dbPin) {
+        db.Pin.findAll({}).then(function (dbPin) {
             res.json(dbPin);
         });
     });
@@ -19,13 +19,13 @@ module.exports = function(app) {
 
     // GET rotue for retrieving a single pin.
     // ===============================================================================================
-    app.get("/api/pins/:id", function(req, res) {
+    app.get("/api/pins/:id", function (req, res) {
         db.Pin.findOne({
                 where: {
                     id: req.params.id
                 }
             })
-            .then(function(dbPin) {
+            .then(function (dbPin) {
                 res.json(dbPin);
             });
     });
@@ -33,13 +33,13 @@ module.exports = function(app) {
 
     // GET rotue for returning pins of a specific language
     // ===============================================================================================
-    app.get("/api/pins/language/:language", function(req, res) {
+    app.get("/api/pins/language/:language", function (req, res) {
         db.Pin.findAll({
                 where: {
                     language: req.params.language
                 }
             })
-            .then(function(dbPin) {
+            .then(function (dbPin) {
                 res.json(dbPin);
             });
     });
@@ -47,7 +47,7 @@ module.exports = function(app) {
 
     // POST route for saving a new pin.
     // ===============================================================================================
-    app.post("/api/pins", function(req, res) {
+    app.post("/api/pins", function (req, res) {
 
         db.Pin.create({
             title: req.body.title,
@@ -55,7 +55,7 @@ module.exports = function(app) {
             language: req.body.language,
             media_type: req.body.media_type,
             content: req.body.content
-        }).then(function(dbPin) {
+        }).then(function (dbPin) {
             res.json(dbPin);
         });
     });
@@ -63,13 +63,13 @@ module.exports = function(app) {
 
     // DELETE route for deleting pins.
     // ===============================================================================================
-    app.delete("/api/pins/:id", function(req, res) {
+    app.delete("/api/pins/:id", function (req, res) {
 
         db.Pin.destroy({
             where: {
                 id: req.params.id
             }
-        }).then(function(dbPin) {
+        }).then(function (dbPin) {
             res.json(dbPin);
         });
 
@@ -78,7 +78,7 @@ module.exports = function(app) {
 
     // PUT route for updating pins
     // ===============================================================================================
-    app.put("/api/pins", function(req, res) {
+    app.put("/api/pins", function (req, res) {
 
         db.Pin.update({
             title: req.body.title,
@@ -90,10 +90,11 @@ module.exports = function(app) {
             where: {
                 id: req.body.id
             }
-        }).then(function(dbPin) {
+        }).then(function (dbPin) {
             res.json(dbPin);
         });
     });
+
 
 
 }; //end of export

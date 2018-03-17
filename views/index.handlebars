@@ -1,4 +1,4 @@
-<div class = "container">
+<div class="container">
     <!-- Logo & Navigation Container -->
     <div class="row justify-content-center">
         <div class="col-5">
@@ -7,7 +7,10 @@
             </div>
         </div>
         <div class="col-5">
-            <p><button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal">Add Pin</button></p> | <p>Logout</p>
+            <p>
+                <button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal">Add Pin</button>
+            </p> |
+            <p>Logout</p>
         </div>
     </div>
 </div>
@@ -26,8 +29,9 @@
 </div>
 
 <!-- Button trigger modal -->
-{{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
+{{!--
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
 </button> --}}
 
 <!-- Modal -->
@@ -55,33 +59,53 @@
                     </div>      
                 </div>
             </div>
-            {{!-- row 2 --}}
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="form-group">
-                        {{!-- <label for="description">Description</label> --}}
-                        <textarea class="form-control" id="description" rows="3" placeholder="Description"></textarea>
-                    </div>  
-                </div>
-                <div class="col-sm-4">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label for="language">Language</label>
-                                <select class="form-control" id="language">
-                                    <option value="" selected disabled>Language</option>
-                                    <option value="html">HTML</option>
-                                    <option value="css">CSS</option>
-                                    <option value="javascript">JavaScript</option>
-                                    <option value="python">Python</option>
-                                    <option value ="php">PHP</option>
-                                </select>
-                            </div>                           
+
+            {{!-- modal body --}}
+            <form>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        {{!-- row 1 --}}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{!--
+                                    <label for="name">Name</label> --}}
+                                    <input type="text" class="form-control" id="name" placeholder="Name" required>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    {{!-- <div class="row">
-                        <div class="col-sm-12">
-                            Image
+                        {{!-- row 2 --}}
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    {{!--
+                                    <label for="description">Description</label> --}}
+                                    <textarea class="form-control" id="description" rows="3" placeholder="Description"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="language">Language</label>
+                                            <select class="form-control" id="language">
+                                                <option value="" selected disabled>Language</option>
+                                                <option value="html">HTML</option>
+                                                <option value="css">CSS</option>
+                                                <option value="javascript">JavaScript</option>
+                                                <option value="python">Python</option>
+                                                <option value="php">PHP</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{!--
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        Image
+                                    </div>
+                                </div> --}}
+                            </div>
                         </div>
                     </div> --}}
                 </div>
@@ -94,17 +118,11 @@
                         <textarea class="form-control" id="content" rows="4" placeholder="Code Snippet"></textarea>
                     </div>  
                 </div>
+            </form>
+            {{!-- modal footer --}}
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="submit">Add</button>
             </div>
-        </div>                
-      
-      </div>
-      </form>
-      {{!-- modal footer --}}
-      <div class="modal-footer">        
-        <button type="button" class="btn btn-primary" id="submit">Add</button>
-      </div>
+        </div>
     </div>
-  </div>
 </div>
-
-
