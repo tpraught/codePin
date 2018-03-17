@@ -19,9 +19,6 @@ module.exports = function(sequelize, DataTypes) {
     language: {
       type: DataTypes.STRING
     },
-    media_type: {
-      type: DataTypes.STRING
-    },
     content: {
       type: DataTypes.STRING
     }
