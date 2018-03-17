@@ -21,7 +21,7 @@ $(document).ready(function() {
         name: $("#name").val().trim(),
         description: $("#description").val().trim(),
         language: $("#language").val().trim(),
-        snippet: $("#snippet").val().trim   
+        snippet: $("#snippet").val().trim()   
       };
       console.log("erer");
       console.log(newPin);
