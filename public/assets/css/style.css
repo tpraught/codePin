@@ -1,5 +1,6 @@
 body {
-    background: none;
+    background: #ffffff;
+    position: relative;
     margin:0 auto;
     font: normal 300 16px "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
     text-align:left;
@@ -9,11 +10,47 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-#logo {
-    
+a {
+    color:#0000ee;
+    text-decoration:none;
 }
 
-header {
-
+a:hover {
+    text-decoration:underline;
 }
 
+/* Login & Sign-up Page CSS */
+.loginBkg {
+    background: url(/assets/images/bkg_login.png);
+    background-repeat:none;
+    background-position: center;
+    background-size:cover;
+	width:100%;
+	height:100vh;
+}
+
+#loginContainer {
+    border: 2px solid #b7b7b7;
+    border-radius: 10px;
+    padding:40px 30px;
+}
+
+.logo p {
+    text-align: center;
+    padding:0 0 40px 0;
+}
+
+#loginContainer input {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+button.login {
+    margin-top:30px;
+    background: #0000ee;
+    color:#ffffff;
+    border-radius: 10px !important;
+    padding: 5px 40px !important;
+}

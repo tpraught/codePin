@@ -43,10 +43,10 @@ require("./routes/api-routes.js")(app);
 app.get("/", function(req, res) {
     // If the user already has an account send them to the login page
     if (req.user) {
-        res.redirect("index");
+        res.redirect("login");
     }
     // Else send them to the signup page
-    res.render("index");
+    res.render("signUp");
 });
 
 app.get("/login", function(req, res) {
