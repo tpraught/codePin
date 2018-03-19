@@ -12,7 +12,7 @@ module.exports = function (app) {
     app.get("/pins", function (req, res) {
 
         db.Pin.findAll({}).then(function (dbPin) {
-            return res.render("all", {pins: dbPin});
+            return res.render("index", {pins: dbPin});
         });
     });
     
