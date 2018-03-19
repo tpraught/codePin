@@ -50,7 +50,45 @@ a:hover {
 button.login {
     margin-top:30px;
     background: #0000ee;
-    color:#ffffff;
+    margin-top:30px;
     border-radius: 10px !important;
     padding: 5px 40px !important;
 }
+
+/* Modals */
+/* .modal-title h5 {
+    text-align: center;
+} */
+
+button#submit {
+    margin-top:30px;
+    background: #0000ee;
+    margin-top:30px;
+    border-radius: 10px !important;
+    padding: 5px 40px !important;
+}
+
+/* .modal-body input {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+} */
+
+.modal-body textarea,
+.modal-body select,
+.modal-body input {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;    
+
+}
+/* .modal-body select {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;    
+
+} */
