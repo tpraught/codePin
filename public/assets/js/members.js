@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 
     
-    $("#submit").on("click", function(event){
+    $("#submit").on("submit", function(event){
 
       event.preventDefault();
       // $("#newPinModal").modal("hide");
@@ -26,9 +26,15 @@ $(document).ready(function() {
       console.log("erer");
       console.log(newPin);
 
-      $.post("/api/pins", newPin).then(function(data){
-        console.log("new pin posted");
-      });
+      $.post("/api/pins", newPin)
+      
+      .then(function(data){
+        $("#post-message").text("Successfully posted!").css("color", "green");
+      })
+      .catch(function(error){
+        $("#post-message").text("Oops, that didn't work.");
+      })
+    
     });
 
   });

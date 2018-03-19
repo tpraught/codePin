@@ -57,6 +57,16 @@ button.login {
     padding: 5px 40px !important;
 }
 
+/* Modals */
+/* .modal-title h5 {
+    text-align: center;
+} */
+
+button#submit {
+    margin-top:30px;
+    background: #0000ee;
+    margin-top:30px;
+
 /* Main Page */
 header {
     margin: 30px auto;
@@ -78,6 +88,32 @@ header p {
     border-radius: 10px !important;
     padding: 5px 40px !important;
 }
+
+/* .modal-body input {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+} */
+
+.modal-body textarea,
+.modal-body select,
+.modal-body input {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;    
+
+}
+  
+/* .modal-body select {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;    
+
+} */
 
 .fa-user-circle {
     color: #0000ee;
@@ -138,6 +174,7 @@ header p {
         padding: 0px !important;   
     }
 }
+  
 @media (min-width: 576px) {
     .navbar img {
         max-width: 175px;
@@ -197,6 +234,7 @@ header p {
         padding: 0px !important; 
     }
 }
+  
 @media (min-width: 1200px) {
     .navbar img {
         max-width: 250px;

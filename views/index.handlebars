@@ -97,8 +97,8 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         {{!-- modal header --}}
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">New Code Pin</h5>
+      <div class="modal-header text-center">
+        <h5 class="modal-title text-center" id="exampleModalLongTitle">New Code Pin</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -123,7 +123,7 @@
                                 <div class="form-group">
                                     {{!--
                                     <label for="description">Description</label> --}}
-                                    <textarea class="form-control" id="description" rows="3" placeholder="Description"></textarea>
+                                    <textarea class="form-control" id="description" rows="3" placeholder="Description" required></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -131,7 +131,7 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label for="language">Language</label>
-                                            <select class="form-control" id="language">
+                                            <select class="form-control" id="language" required>
                                                 <option value="" selected disabled>Language</option>
                                                 <option value="html">HTML</option>
                                                 <option value="css">CSS</option>
@@ -155,14 +155,16 @@
                 <div class="col-sm-12">
                     <div class="form-group">
                         {{!-- <label for="snippet">Code Snippet</label> --}}
-                        <textarea class="form-control" id="content" rows="4" placeholder="Code Snippet"></textarea>
+                        <textarea class="form-control" id="content" rows="4" placeholder="Code Snippet" required></textarea>
                     </div>  
                 </div>
-            </form>
-            {{!-- modal footer --}}
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="submit">Add</button>
+                 {{!-- modal footer --}}
+            <div class="modal-footer" style="border-top: none">
+                <button type="submit" class="btn btn-primary" id="submit">Add</button>
             </div>
+            <div id="post-message"></div>
+            </form>
+           
         </div>
     </div>
 </div>
