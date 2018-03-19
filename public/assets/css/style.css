@@ -66,6 +66,7 @@ button#submit {
     margin-top:30px;
     background: #0000ee;
     margin-top:30px;
+}
 
 /* Main Page */
 header {
@@ -74,6 +75,11 @@ header {
 
 header p {
     margin-bottom: 0px !important;
+}
+
+.row {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* Logo on main page */
