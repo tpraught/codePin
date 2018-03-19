@@ -78,8 +78,8 @@ header p {
 }
 
 .row {
-    margin-right: auto !important;
-    margin-left: auto !important;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* Logo on main page */
