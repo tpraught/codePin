@@ -1,56 +1,277 @@
 body {
     background: #ffffff;
     position: relative;
-    margin:0 auto;
+    margin: 0 auto;
     font: normal 300 16px "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-    text-align:left;
+    text-align: left;
     color: #000000;
-    line-height:1.4;
+    line-height: 1.4;
     font-kerning: auto;
     -webkit-font-smoothing: antialiased;
 }
 
 a {
-    color:#0000ee;
-    text-decoration:none;
+    color: #0000ee;
+    text-decoration: none;
 }
 
 a:hover {
-    text-decoration:underline;
+    color: #0000ee;
+    text-decoration: underline;
 }
 
 /* Login & Sign-up Page CSS */
 .loginBkg {
     background: url(/assets/images/bkg_login.png);
-    background-repeat:none;
+    background-repeat: none;
     background-position: center;
-    background-size:cover;
-	width:100%;
-	height:100vh;
+    background-size: cover;
+	width: 100%;
+	height: 100vh;
 }
 
 #loginContainer {
     border: 2px solid #b7b7b7;
     border-radius: 10px;
-    padding:40px 30px;
+    padding: 40px 30px;
 }
 
+/* Logo on Login & Sign-up pages */
 .logo p {
     text-align: center;
-    padding:0 0 40px 0;
+    padding: 0 0 40px 0;
 }
 
 #loginContainer input {
     background: #e2e2e2;
-    border:none;
+    border: none;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
 button.login {
-    margin-top:30px;
+    margin-top: 30px;
     background: #0000ee;
-    color:#ffffff;
+    color: #ffffff;
     border-radius: 10px !important;
     padding: 5px 40px !important;
+}
+
+/* Modals */
+/* .modal-title h5 {
+    text-align: center;
+} */
+
+button#submit {
+    margin-top:30px;
+    background: #0000ee;
+    margin-top:30px;
+}
+
+/* Main Page */
+header {
+    margin: 30px auto;
+}
+
+header p {
+    margin-bottom: 0px !important;
+}
+
+.row {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Logo on main page */
+.navbar img {
+    max-width: 250px;
+    width: 100%;
+}
+
+.btn-primary {
+    background: #0000ee;
+    color: #ffffff;
+    border-radius: 10px !important;
+    padding: 5px 40px !important;
+}
+
+/* .modal-body input {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+} */
+
+.modal-body textarea, .modal-body select, .modal-body input {
+    background: #e2e2e2;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;    
+}
+  
+/* .modal-body select {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;    
+
+} */
+
+.fa-user-circle {
+    color: #0000ee;
+}
+
+/* Main Page Pin Cards */
+#pinContainer {
+    width:100%;
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+#pin.card {
+    border: 2px solid #b7b7b7 !important;
+    border-radius: 10px !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#pin .card-body {
+    padding: 1.25rem 0 !important;
+}
+
+#pin h5, #pin h6, #pin p, #pin a.card-link {
+    padding: 0 1.25rem;
+}
+
+#pin h5.card-title {
+    font-weight: 700;
+}
+
+#pin .card-text {
+    margin: 1.25rem 0;
+    padding: 1.25rem 0;
+    background: #cdcdcd;
+}
+
+#pin .card-text p, #pin p.card-language {
+    margin: 0 !important;
+}
+
+#pin h5.card-title a {
+    color: #000000;
+}
+
+#pin .fa-eye {
+    color: #0000ee;
+}
+
+/* Media Queries */
+@media (min-width: 300px) {
+    #loginContainer {
+        margin-top: 3rem;
+    }
+    .navbar img {
+        max-width: 150px;
+    }
+    span.navHide {
+        display: none;
+    }
+    span.navShow {
+        display: block;
+    }
+    span.navShow .btn-primary {
+        background: none;
+        border: none;
+        color: #0000ee;     
+        padding: 0px !important;   
+    }
+}
+  
+@media (min-width: 576px) {
+    .navbar img {
+        max-width: 175px;
+    }
+    #pinContainer {
+        max-width: 540px;
+    }
+    span.navHide {
+        display: none;
+    }
+    span.navShow {
+        display: block;
+    }
+    span.navShow .btn-primary {
+        background: none;
+        border: none;
+        color: #0000ee;    
+        padding: 0px !important;   
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar img {
+        max-width: 200px;
+    }
+    #pinContainer {
+        max-width: 740px;
+    }
+    span.navHide {
+        display: none;
+    }
+    span.navShow {
+        display: block;
+    }
+    span.navShow .btn-primary {
+        background: none;
+        border: none;
+        color: #0000ee;  
+        padding: 0px !important;    
+    }
+}
+
+@media (min-width: 992px) {
+    #pinContainer {
+        max-width: 960px;
+    }
+    span.navHide {
+        display: none;
+    }
+    span.navShow {
+        display: block;
+    }
+    span.navShow .btn-primary {
+        background: none;
+        border: none;
+        color: #0000ee;     
+        padding: 0px !important; 
+    }
+}
+  
+@media (min-width: 1200px) {
+    .navbar img {
+        max-width: 250px;
+    }
+    #pinContainer {
+        max-width: 1140px;
+    }
+    span.navShow {
+        display: none;
+    }
+    span.navHide {
+        display: block;
+    }
+}
+
+@media (min-width: 1600px) {
+    #pinContainer {
+        max-width: 1550px;
+    }
+    span.navShow {
+        display: none;
+    }
+    span.navHide {
+        display: block;
+    }
 }

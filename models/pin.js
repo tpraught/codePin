@@ -23,6 +23,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   });
+  
+  // // Pin cant be created without a user
+  // Pin.associate = function(models) {
+  //   Pin.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
+
   return Pin;
 };
 
