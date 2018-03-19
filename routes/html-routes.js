@@ -15,4 +15,7 @@ module.exports = function(app) {
     res.render("signUp");
   });
 
+  app.get("/read", function(req, res) {
+    res.render("read");
+  });
 }

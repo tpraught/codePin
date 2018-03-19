@@ -103,14 +103,11 @@ header p {
     
 } */
 
-.modal-body textarea,
-.modal-body select,
-.modal-body input {
+.modal-body textarea, .modal-body select, .modal-body input {
     background: #e2e2e2;
-    border:none;
+    border: none;
     border-radius: 10px;
     margin-bottom: 20px;    
-
 }
   
 /* .modal-body select {
@@ -144,7 +141,7 @@ header p {
     padding: 1.25rem 0 !important;
 }
 
-#pin h5, #pin h6, #pin p, #pin a {
+#pin h5, #pin h6, #pin p, #pin a.card-link {
     padding: 0 1.25rem;
 }
 
@@ -158,12 +155,23 @@ header p {
     background: #cdcdcd;
 }
 
-#pin .card-text p {
+#pin .card-text p, #pin p.card-language {
     margin: 0 !important;
+}
+
+#pin h5.card-title a {
+    color: #000000;
+}
+
+#pin .fa-eye {
+    color: #0000ee;
 }
 
 /* Media Queries */
 @media (min-width: 300px) {
+    #loginContainer {
+        margin-top: 3rem;
+    }
     .navbar img {
         max-width: 150px;
     }
