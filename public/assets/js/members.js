@@ -7,28 +7,28 @@ $(document).ready(function() {
 
 
     //add button to create new pin 
-
-
     
-    $("#submit").on("click", function(event){
+    $("form").on("submit", function(event){
 
-      event.preventDefault();
-      // $("#newPinModal").modal("hide");
+      event.preventDefault();  
       
-
       //grab all the form data and put into newPin object
       var newPin = {
         title: $("#title").val().trim(),
         description: $("#description").val().trim(),
         language: $("#language").val().trim(),
         content: $("#content").val().trim()   
-      };
-      console.log("erer");
+      };      
       console.log(newPin);
-
-      $.post("/api/pins", newPin).then(function(data){
-        console.log("new pin posted");
-      });
+      //ajax post call to send new pin data to db and return success/error message to user
+      $.post("/api/pins", newPin)      
+      .then(function(data){
+        $("#post-message").text("Successfully posted!").css("color", "green");
+      })
+      .catch(function(error){
+        $("#post-message").text("Oops, that didn't work.");
+      })
+    
     });
 
   });

@@ -7,7 +7,7 @@ var passport = require("../config/passport");
 module.exports = function (app) {
 
     app.post("/api/login", passport.authenticate("local"), function (req, res) {
-        res.json("/members");
+        res.json("/");
     });
 
     app.post("/api/signup", function (req, res) {
@@ -26,7 +26,7 @@ module.exports = function (app) {
 
     app.get("/logout", function (req, res) {
         req.logout();
-        res.redirect("/");
+        res.redirect("/login");
     });
 
     app.get("/api/user_data", function (req, res) {
