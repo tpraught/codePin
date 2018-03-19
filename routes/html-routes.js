@@ -14,8 +14,4 @@ module.exports = function(app) {
   app.get("/signup", function(req, res) {
     res.render("signUp");
   });
-
-  app.get("/read", function(req, res) {
-    res.render("read");
-  });
-}
+};
