@@ -5,6 +5,10 @@ var bcrypt = require("bcrypt-nodejs");
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
         // The email cannot be null, and must be a proper email before creation
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -28,5 +32,13 @@ module.exports = function(sequelize, DataTypes) {
     User.hook("beforeCreate", function(user) {
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
     });
+    
+    // // Associating User with Pins
+    // User.associate = function(models) {
+    //     User.hasMany(models.Pin, {
+    //       onDelete: "cascade"
+    //     });
+    // };
+
     return User;
 };

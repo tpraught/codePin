@@ -1,32 +1,90 @@
-<div class="container">
-    <!-- Logo & Navigation Container -->
-    <div class="row justify-content-center">
-        <div class="col-5">
-            <div id="logo">
-                <img src="../assets/images/logo_codePin.png" />
+<!-- Logo & Navigation Container -->
+<header id="pinContainer">
+    <nav class="navbar sticky-top navbar-light bg-light">
+        <div class="d-flex justify-content-start">
+            <a class="navbar-brand" href="#"><img src="../assets/images/logo_codePin.png" /></a>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <div class="p-2">
+                <span class="navHide"><p class="pt-1 pb-1"><i class="fas fa-user-circle fa-lg"></i><span class="pl-2">{{!-- {{this.name}} --}}Tonye Praught</span></p></span>
+                <span class="navShow"><p><i class="fas fa-user-circle fa-lg"></i></p></span>
+            </div>
+            <div class="p-2">
+                <span class="navHide"><p class="pt-1 pb-1"><a href="#"><i class="fas fa-power-off fa-lg"></i><span class="pl-2">Logout</span></a></p></span>
+                <span class="navShow"><p><a href="#"><i class="fas fa-power-off fa-lg"></i></a></p></span>
+            </div>
+            <div class="p-2">
+                <span class="navHide"><button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal"><i class="fas fa-plus-circle fa-lg"></i> Add Pin</button></span>
+                <span class="navShow"><button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal"><i class="fas fa-plus-circle fa-lg"></i></button></span>
             </div>
         </div>
-        <div class="col-5">
-            <p>
-                <button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal">Add Pin</button>
-            </p> |
-            <p>Logout</p>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <!-- Panel Container for Pins -->
-    <div class="row justify-content-center">
-        <div class="col-10">
-            <div class="row">
-                <!-- Panel/Card for one pin -->
-                <div class="col-2">
-
+    </nav>
+</header>
+<!-- Panel Container for Pins -->
+<div class="row justify-content-center">
+    <div class="col col-md-12 col-lg-12 col-xl-12">
+        {{!-- <div class="row">
+            <!-- Panel/Card for one pin -->
+            {{#each pins}}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.title}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{thisdescription}}</h6>
+                            <p class="card-text">{{thiscontent}}</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div> --}}
+        <div id="pinContainer" class="row justify-content-start">
+            <!-- Panel/Card for one pin -->
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div id="pin" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bootstrap CSS Library</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Library with reusable code / easily set-up </h6>
+                        <div class="card-text">
+                            <p>test code snippet</p>
+                        </div>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div id="pin" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bootstrap CSS Library</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Library with reusable code / easily set-up </h6>
+                        <div class="card-text">
+                            <p>test code snippet</p>
+                        </div>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div id="pin" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bootstrap CSS Library</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Library with reusable code / easily set-up </h6>
+                        <div class="card-text">
+                            <p>test code snippet</p>
+                        </div>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Button trigger modal -->
 {{!--
