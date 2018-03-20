@@ -27,9 +27,20 @@ $(document).ready(function() {
       })
       .catch(function(error){
         $("#post-message").text("Oops, that didn't work.");
-      })
-    
+      });    
     });
+
+    ///ajax update call
+    //event handler goes here. need to trigger modal via edit buttons
+    
+    // $.put("/api/pins", newPin)
+    // .then(function(data){
+    //   $("#post-message").text("Successfully updated.").css("color", "green");
+    // })
+    // .catch(function(error){
+    //   $("#post-message").text("Your pin was not updated.").css("color", "red");
+    // });
+
 
   });
   
