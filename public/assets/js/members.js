@@ -23,7 +23,7 @@ $(document).ready(function () {
       description: $("#description").val().trim(),
       language: $("#language").val().trim(),
       content: $("#content").val().trim(),
-      content: $("#link").val().trim(),
+      link: $("#link").val().trim(),
       UserId: $("#user-id").val().trim(),
     };
     console.log(newPin);

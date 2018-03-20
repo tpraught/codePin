@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
   Pin.associate = function(models) {
     Pin.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
+        // allowNull: false
       }
     });
   };
