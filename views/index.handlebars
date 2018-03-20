@@ -81,7 +81,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="newPinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
         {{!-- modal header --}}
       <div class="modal-header text-center">
@@ -139,6 +139,15 @@
                         <textarea class="form-control" id="content" rows="4" placeholder="Code Snippet" required></textarea>
                     </div>  
                 </div>
+            </div>
+            {{!-- row 4 --}}
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <textarea class="form-control" id="link" rows="2" placeholder="link" required></textarea>
+                    </div>
+                </div>
+            </div>
                  {{!-- modal footer --}}
             <div class="modal-footer" style="border-top: none">
                 <button type="submit" class="btn btn-primary" id="submit">Add</button>
