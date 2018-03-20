@@ -23,7 +23,8 @@ $(document).ready(function () {
       description: $("#description").val().trim(),
       language: $("#language").val().trim(),
       content: $("#content").val().trim(),
-      UserId: userId
+      content: $("#link").val().trim(),
+      UserId: $("#user-id").val().trim(),
     };
     console.log(newPin);
     //ajax post call to send new pin data to db and return success/error message to user
