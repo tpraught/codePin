@@ -1,4 +1,4 @@
-<!-- Logo & Navigation Container -->
+{{!-- Logo & Navigation Container --}}
 <header id="pinContainer">
     <nav class="navbar sticky-top navbar-light">
         <div class="d-flex justify-content-start">
@@ -7,12 +7,12 @@
 
         <div class="d-flex justify-content-end">
             <div class="p-2">
-                <span class="navHide"><p class="pt-1 pb-1"><i class="fas fa-user-circle fa-lg"></i><span class="pl-2">{{this.name}}</span></p></span>
+                <span class="navHide"><p class="pt-1 pb-1"><i class="fas fa-user-circle fa-lg"></i><span class="pl-2 member-name"></span></p></span>
                 <span class="navShow"><p><i class="fas fa-user-circle fa-lg"></i></p></span>
             </div>
             <div class="p-2">
-                <span class="navHide"><p class="pt-1 pb-1"><a href="#"><i class="fas fa-power-off fa-lg"></i><span class="pl-2">Logout</span></a></p></span>
-                <span class="navShow"><p><a href="#"><i class="fas fa-power-off fa-lg"></i></a></p></span>
+                <span class="navHide"><p class="pt-1 pb-1"><a href="logout"><i class="fas fa-power-off fa-lg"></i><span class="pl-2">Logout</span></a></p></span>
+                <span class="navShow"><p><a href="logout"><i class="fas fa-power-off fa-lg"></i></a></p></span>
             </div>
             <div class="p-2">
                 <span class="navHide"><button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal"><i class="fas fa-plus-circle fa-lg"></i> Add Pin</button></span>
@@ -21,11 +21,12 @@
         </div>
     </nav>
 </header>
-<!-- Panel Container for Pins -->
+
+{{!-- Panel Container for Pins --}}
 <div class="row justify-content-center">
     <div class="col col-md-12 col-lg-12 col-xl-12">
-        <div id="pinContainer" class="row justify-content-start">
-            <!-- Panel/Card for one pin -->
+        <div id="pinContainer" class="row justify-content-start card-columns ">
+            {{!-- Panel/Card for one pin --}}
             {{#each pins}}
             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div id="pin" class="card">
@@ -46,116 +47,121 @@
 </div>
 
 {{!-- edit modal needs to go up here, above the add modal --}}
-
-<!-- Button trigger modal -->
-{{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button> --}}
-
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Button trigger modal -->
-{{!--
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-</button> --}}
-
-<!-- Modal -->
-<div class="modal fade" id="newPinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-        {{!-- modal header --}}
-      <div class="modal-header text-center">
-        <h5 class="modal-title text-center" id="exampleModalLongTitle">New Code Pin</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      {{!-- modal body --}}
-      <form>
-      <div class="modal-body">          
-        <div class="container-fluid">
-            {{!-- row 1 --}}
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        {{!-- <label for="name">Name</label> --}}
-                        <input type="text" class="form-control" id="title" placeholder="Title" required>
-                    </div>      
-                </div>
-            </div>
-            {{!-- row 2 --}}
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="form-group">
-                        {{!--
-                        <label for="description">Description</label> --}}
-                        <textarea class="form-control" id="description" rows="3" placeholder="Description" required></textarea>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label for="language">Language</label>
-                                <select class="form-control" id="language" required>
-                                    <option value="" selected disabled>Language</option>
-                                    <option value="html">HTML</option>
-                                    <option value="css">CSS</option>
-                                    <option value="javascript">JavaScript</option>
-                                    <option value="python">Python</option>
-                                    <option value="php">PHP</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{!-- row 3 --}}
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        {{!-- <label for="snippet">Code Snippet</label> --}}
-                        <textarea class="form-control" id="content" rows="4" placeholder="Code Snippet" required></textarea>
-                    </div>  
-                </div>
-            </div>
-            {{!-- row 4 --}}
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <textarea class="form-control" id="link" rows="2" placeholder="link" required></textarea>
-                    </div>
-                </div>
-            </div>
-                 {{!-- modal footer --}}
-            <div class="modal-footer" style="border-top: none">
-                <button type="submit" class="btn btn-primary" id="submit">Add</button>
-            </div>
-            <div id="post-message"></div>
-            </form>
-           
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
         </div>
     </div>
 </div>
 
+{{!-- Add pin modal --}}
+<div class="modal fade" id="newPinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            {{!-- modal header --}}
+            <div class="modal-header">
+                <h4 class="modal-title text-center font-weight-bold" id="exampleModalLongTitle">Create Pin</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            {{!-- modal body --}}
+            <div class="modal-body">          
+                <div class="container-fluid">
+                    <form>
+                        {{!-- row 1 --}}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{!-- <label for="name">Name</label> --}}
+                                    <input type="text" class="form-control" id="title" placeholder="Title" required>
+                                </div>      
+                            </div>
+                        </div>
+                        {{!-- row 2 --}}
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    {{!--<label for="description">Description</label> --}}
+                                    <textarea class="form-control" id="description" rows="3" placeholder="Description" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="language">Language</label>
+                                    <select class="form-control" id="language" required>
+                                        <option value="" selected disabled>Language</option>
+                                        <option value="html">HTML</option>
+                                        <option value="css">CSS</option>
+                                        <option value="javascript">JavaScript</option>
+                                        <option value="python">Python</option>
+                                        <option value="php">PHP</option>
+                                        <option value="server">Server-side</option>
+                                        <option value="database">Database</option>                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        {{!-- row 3 --}}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{!-- <label for="snippet">Code Snippet</label> --}}
+                                    <textarea class="form-control" id="content" rows="4" placeholder="Code Snippet" required></textarea>
+                                </div>  
+                            </div>
+                        </div>
+                        {{!-- row 4 --}}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input class="form-control" id="link" rows="2" placeholder="website" required>
+                                </div>
+                            </div>
+                        </div>
+                            {{!-- modal footer --}}
+                        <div class="modal-footer" style="border-top: none">
+                            <button type="submit" class="btn btn-primary float-right" id="submit">Add</button>
+                            <div class="float-left" id="post-message"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- View modal --}}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+</div>
