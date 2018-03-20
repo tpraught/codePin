@@ -7,7 +7,7 @@
 
         <div class="d-flex justify-content-end">
             <div class="p-2">
-                <span class="navHide"><p class="pt-1 pb-1"><i class="fas fa-user-circle fa-lg"></i><span class="pl-2">{{!-- {{this.name}} --}}Tonye Praught</span></p></span>
+                <span class="navHide"><p class="pt-1 pb-1"><i class="fas fa-user-circle fa-lg"></i><span class="pl-2">{{this.name}}</span></p></span>
                 <span class="navShow"><p><i class="fas fa-user-circle fa-lg"></i></p></span>
             </div>
             <div class="p-2">
@@ -24,22 +24,6 @@
 <!-- Panel Container for Pins -->
 <div class="row justify-content-center">
     <div class="col col-md-12 col-lg-12 col-xl-12">
-        {{!-- <div class="row">
-            <!-- Panel/Card for one pin -->
-            {{#each pins}}
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{this.title}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{this.description}}</h6>
-                            <p class="card-text">{{thiscontent}}</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                </div>
-            {{/each}}
-        </div> --}}
         <div id="pinContainer" class="row justify-content-start">
             <!-- Panel/Card for one pin -->
             {{#each pins}}
@@ -52,41 +36,42 @@
                             <p>{{this.content}}</p>
                         </div>
                         <p class="card-language float-left">language</p>
-                        <a href="#" class="card-link float-right"><i class="far fa-edit fa-lg"></i><span class="pl-2">edit</span></a>
+                        <a href="#editPinModal" data-toggle="modal" data-target="#editPinModal" class="card-link float-right"><i class="far fa-edit fa-lg"></i><span class="pl-2">edit</span></a>
                     </div>
                 </div>
             </div>
             {{/each}}
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div id="pin" class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="#">Bootstrap CSS Library<span class="pl-3"><i class="fas fa-eye fa-sm"></i></span></a></h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Library with reusable code / easily set-up </h6>
-                        <div class="card-text">
-                            <p>test code snippet</p>
-                        </div>
-                        <p class="card-language float-left">language</p>
-                        <a href="#" class="card-link float-right"><i class="far fa-edit fa-lg"></i><span class="pl-2">edit</span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div id="pin" class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="#">Bootstrap CSS Library<span class="pl-3"><i class="fas fa-eye fa-sm"></i></span></a></h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Library with reusable code / easily set-up </h6>
-                        <div class="card-text">
-                            <p>test code snippet</p>
-                        </div>
-                        <p class="card-language float-left">language</p>
-                        <a href="#" class="card-link float-right"><i class="far fa-edit fa-lg"></i><span class="pl-2">edit</span></a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
 
+{{!-- edit modal needs to go up here, above the add modal --}}
+
+<!-- Button trigger modal -->
+{{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> --}}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Button trigger modal -->
 {{!--
@@ -119,39 +104,33 @@
                     </div>      
                 </div>
             </div>
-                        {{!-- row 2 --}}
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <div class="form-group">
-                                    {{!--
-                                    <label for="description">Description</label> --}}
-                                    <textarea class="form-control" id="description" rows="3" placeholder="Description" required></textarea>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <label for="language">Language</label>
-                                            <select class="form-control" id="language" required>
-                                                <option value="" selected disabled>Language</option>
-                                                <option value="html">HTML</option>
-                                                <option value="css">CSS</option>
-                                                <option value="javascript">JavaScript</option>
-                                                <option value="python">Python</option>
-                                                <option value="php">PHP</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{!--
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        Image
-                                    </div>
-                                </div> --}}
+            {{!-- row 2 --}}
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        {{!--
+                        <label for="description">Description</label> --}}
+                        <textarea class="form-control" id="description" rows="3" placeholder="Description" required></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select class="form-control" id="language" required>
+                                    <option value="" selected disabled>Language</option>
+                                    <option value="html">HTML</option>
+                                    <option value="css">CSS</option>
+                                    <option value="javascript">JavaScript</option>
+                                    <option value="python">Python</option>
+                                    <option value="php">PHP</option>
+                                </select>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
             {{!-- row 3 --}}
             <div class="row">
                 <div class="col-sm-12">
@@ -170,3 +149,4 @@
         </div>
     </div>
 </div>
+
