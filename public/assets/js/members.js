@@ -24,6 +24,7 @@ $(document).ready(function () {
     $.post("/api/pins", newPin)
       .then(function (data) {
         $("#post-message").text("Successfully posted!").css("color", "green");
+        location.reload();
       })
       .catch(function (error) {
         $("#post-message").text("Oops, that didn't work.");
