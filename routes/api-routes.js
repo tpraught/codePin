@@ -53,7 +53,7 @@ module.exports = function (app) {
             title: req.body.title,
             description: req.body.description,
             language: req.body.language,
-            media_type: req.body.media_type,
+            link: req.body.link,
             content: req.body.content
         }).then(function (dbPin) {
             res.json(dbPin);
@@ -84,7 +84,7 @@ module.exports = function (app) {
             title: req.body.title,
             description: req.body.description,
             language: req.body.language,
-            media_type: req.body.media_type,
+            link: req.body.link,
             content: req.body.content
         }, {
             where: {
