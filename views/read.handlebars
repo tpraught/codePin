@@ -1,4 +1,14 @@
-<p>title:{{pin.title}}</p>
-<p>description:{{pin.description}}</p>
-<p>language:{{pin.language}}</p>
-<p>content:{{pin.content}}</p>
+
+            <h4 class="modal-title" id="exampleModalLabel">{{pin.title}}</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        <div class="modal-body">
+            <h6>{{pin.description}}</h6>
+            <div style="background:#cdcdcd;" class="snippet">{{pin.content}}</div>
+            <p>{{pin.language}}</p>
+            <p>{{pin.link}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
