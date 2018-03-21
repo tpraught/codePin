@@ -10,12 +10,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.clearfix::after {
-  content: "";
-    display:block;
-   clear:both;
-}
-
 a {
     color: #0000ee;
     text-decoration: none;
@@ -63,6 +57,11 @@ button.login {
     padding: 5px 40px !important;
 }
 
+/* Modals */
+/* .modal-title h5 {
+    text-align: center;
+} */
+
 button#submit {
     margin-top:30px;
     background: #0000ee;
@@ -96,12 +95,28 @@ header p {
     padding: 5px 40px !important;
 }
 
+/* .modal-body input {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+} */
+
 .modal-body textarea, .modal-body select, .modal-body input {
     background: #e2e2e2;
     border: none;
     border-radius: 10px;
     margin-bottom: 20px;    
 }
+  
+/* .modal-body select {
+    background: #e2e2e2;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 20px;    
+
+} */
 
 .fa-user-circle {
     color: #0000ee;
@@ -172,9 +187,6 @@ header p {
         color: #0000ee;     
         padding: 0px !important;   
     }
-    .card-columns {
-        column-count: 1;
-    }
 }
   
 @media (min-width: 576px) {
@@ -195,9 +207,6 @@ header p {
         border: none;
         color: #0000ee;    
         padding: 0px !important;   
-    }
-    .card-columns {
-        column-count: 2;
     }
 }
 
@@ -220,9 +229,6 @@ header p {
         color: #0000ee;  
         padding: 0px !important;    
     }
-    .card-columns {
-        column-count: 2;
-    }
 }
 
 @media (min-width: 992px) {
@@ -241,9 +247,6 @@ header p {
         color: #0000ee;     
         padding: 0px !important; 
     }
-    .card-columns {
-        column-count: 3;
-    }
 }
   
 @media (min-width: 1200px) {
@@ -258,9 +261,6 @@ header p {
     }
     span.navHide {
         display: block;
-    }
-    .card-columns {
-        column-count: 4;
     }
 }
 
