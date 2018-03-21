@@ -20,12 +20,13 @@ Code pin is a javascript application whose intent is to allow a user to save and
 
 
 ### Technology
-* Node.js
-* Express.js
-* MySQL
-* Sequelize
-* Bootstrap
-* Passport
+* [Node.js](https://nodejs.org/en/)
+* [Express.js](https://expressjs.com/)
+* [MySQL](https://www.mysql.com/)
+* [Sequelize](http://docs.sequelizejs.com/)
+* [Bootstrap](http://getbootstrap.com/)
+* [Passport](http://www.passportjs.org/)
+* [Handlebars js](http://handlebarsjs.com/)
 
 ### Authors
 * [Derrick Guy](https://github.com/mrderrickguy)
