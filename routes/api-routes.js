@@ -29,6 +29,19 @@ module.exports = function (app) {
                 res.json(dbPin);
             });
     });
+    
+    // GET rotue for retrieving pins for a user.
+    // ===============================================================================================
+    app.get("/api/pins/user/:userid", function (req, res) {
+        db.Pin.findAll({
+                where: {
+                    UserId: req.params.userid,
+                }
+            })
+            .then(function (dbPin) {
+                res.json(dbPin);
+            });
+    });
 
 
     // GET rotue for returning pins of a specific language
