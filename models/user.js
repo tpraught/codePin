@@ -33,12 +33,12 @@ module.exports = function(sequelize, DataTypes) {
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
     });
     
-    // // Associating User with Pins
-    // User.associate = function(models) {
-    //     User.hasMany(models.Pin, {
-    //       onDelete: "cascade"
-    //     });
-    // };
+    // Associating User with Pins
+    User.associate = function(models) {
+        User.hasMany(models.Pin, {
+          onDelete: "cascade"
+        });
+    };
 
     return User;
 };

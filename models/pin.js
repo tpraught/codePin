@@ -21,17 +21,20 @@ module.exports = function(sequelize, DataTypes) {
     },
     content: {
       type: DataTypes.TEXT
+    },
+    link: {
+      type: DataTypes.STRING
     }
   });
   
-  // // Pin cant be created without a user
-  // Pin.associate = function(models) {
-  //   Pin.belongsTo(models.User, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
+  // Pin cant be created without a user
+  Pin.associate = function(models) {
+    Pin.belongsTo(models.User, {
+      foreignKey: {
+        // allowNull: false
+      }
+    });
+  };
 
   return Pin;
 };
