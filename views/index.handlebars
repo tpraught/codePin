@@ -37,7 +37,7 @@
                             <pre><code>{{this.content}}</code></pre>
                         </div>
                         <p class="card-language float-left">language</p>
-                        <a href="#editPinModal" data-toggle="modal" data-target="#editPinModal" class="card-link float-right"><i class="far fa-edit fa-lg"></i><span class="pl-2">edit</span></a>
+                        <a href="#" class="card-link float-right editPinModal" data-toggle="modal" data-target="#edit{{this.id}}"><i class="far fa-edit fa-lg"></i><span class="pl-2">edit</span></a>
                     </div>
                 </div>
             </div>
@@ -47,8 +47,9 @@
 </div>
 
 {{!-- edit modal needs to go up here, above the add modal --}}
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+{{#each pins}}
+<div class="modal fade" id="edit{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -57,7 +58,7 @@
             </button>
         </div>
         <div class="modal-body">
-            ...
+            {{this.title}}
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -66,6 +67,7 @@
         </div>
     </div>
 </div>
+{{/each}}
 
 {{!-- Add pin modal --}}
 <div class="modal fade" id="newPinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
