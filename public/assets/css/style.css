@@ -10,6 +10,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.clearfix::after {
+    content: "";
+    display:block;
+    clear:both;
+}
+
 a {
     color: #0000ee;
     text-decoration: none;
@@ -20,16 +26,14 @@ a:hover {
     text-decoration: underline;
 }
 
-
 /* Login & Sign-up Page CSS */
-
 .loginBkg {
     background: url(/assets/images/bkg_login.png);
     background-repeat: none;
     background-position: center;
     background-size: cover;
-    width: 100%;
-    height: 100vh;
+	width: 100%;
+	height: 100vh;
 }
 
 #loginContainer {
@@ -38,9 +42,7 @@ a:hover {
     padding: 40px 30px;
 }
 
-
 /* Logo on Login & Sign-up pages */
-
 .logo p {
     text-align: center;
     padding: 0 0 40px 0;
@@ -61,23 +63,13 @@ button.login {
     padding: 5px 40px !important;
 }
 
-
-/* Modals */
-
-
-/* .modal-title h5 {
-    text-align: center;
-} */
-
 button#submit {
-    margin-top: 30px;
+    margin-top:30px;
     background: #0000ee;
-    margin-top: 30px;
+    margin-top:30px;
 }
 
-
 /* Main Page */
-
 header {
     margin: 30px auto;
 }
@@ -91,9 +83,7 @@ header p {
     margin-left: auto;
 }
 
-
 /* Logo on main page */
-
 .navbar img {
     max-width: 250px;
     width: 100%;
@@ -106,46 +96,24 @@ header p {
     padding: 5px 40px !important;
 }
 
-
-/* .modal-body input {
-    background: #e2e2e2;
-    border:none;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    
-} */
-
-.modal-body textarea,
-.modal-body select,
-.modal-body input {
+.modal-body textarea, .modal-body select, .modal-body input {
     background: #e2e2e2;
     border: none;
     border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-
-/* .modal-body select {
-    background: #e2e2e2;
-    border:none;
-    border-radius: 10px;
     margin-bottom: 20px;    
-
-} */
+}
 
 .fa-user-circle {
     color: #0000ee;
 }
 
-
 /* Main Page Pin Cards */
-
 #pinContainer {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    width:100%;
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto;
 }
 
 #pin.card {
@@ -154,15 +122,11 @@ header p {
     margin-top: 15px;
     margin-bottom: 15px;
 }
-
 #pin .card-body {
     padding: 1.25rem 0 !important;
 }
 
-#pin h5,
-#pin h6,
-#pin p,
-#pin a.card-link {
+#pin h5, #pin h6, #pin p, #pin a.card-link {
     padding: 0 1.25rem;
 }
 
@@ -172,13 +136,11 @@ header p {
 
 #pin .card-text {
     margin: 1.25rem 0;
-    padding: 1.25rem 0;
-    background: #cdcdcd;
 }
 
-#pin .card-text p,
-#pin p.card-language {
+#pin .card-text p, #pin p.card-language {
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 #pin h5.card-title a {
@@ -189,9 +151,16 @@ header p {
     color: #0000ee;
 }
 
+a.viewPin {
+    color: #000000 !important;
+}
+
+#pin .card-footer {
+    padding-bottom: 1.25rem;
+    border: none !important;
+}
 
 /* Media Queries */
-
 @media (min-width: 300px) {
     #loginContainer {
         margin-top: 3rem;
@@ -208,17 +177,17 @@ header p {
     span.navShow .btn-primary {
         background: none;
         border: none;
-        color: #0000ee;
-        padding: 0px !important;
+        color: #0000ee;     
+        padding: 0px !important;   
+    }
+    .card-columns {
+        column-count: 1;
     }
 }
-
+  
 @media (min-width: 576px) {
     .navbar img {
         max-width: 175px;
-    }
-    #pinContainer {
-        max-width: 540px;
     }
     span.navHide {
         display: none;
@@ -229,8 +198,14 @@ header p {
     span.navShow .btn-primary {
         background: none;
         border: none;
-        color: #0000ee;
-        padding: 0px !important;
+        color: #0000ee;    
+        padding: 0px !important;   
+    }
+    #pinContainer {
+        max-width: 540px;
+    }
+    .card-columns {
+        column-count: 2;
     }
 }
 
@@ -238,9 +213,6 @@ header p {
     .navbar img {
         max-width: 200px;
     }
-    #pinContainer {
-        max-width: 740px;
-    }
     span.navHide {
         display: none;
     }
@@ -250,15 +222,18 @@ header p {
     span.navShow .btn-primary {
         background: none;
         border: none;
-        color: #0000ee;
-        padding: 0px !important;
+        color: #0000ee;  
+        padding: 0px !important;    
+    }
+    #pinContainer {
+        max-width: 740px;
+    }
+    .card-columns {
+        column-count: 3;
     }
 }
 
 @media (min-width: 992px) {
-    #pinContainer {
-        max-width: 960px;
-    }
     span.navHide {
         display: none;
     }
@@ -268,23 +243,32 @@ header p {
     span.navShow .btn-primary {
         background: none;
         border: none;
-        color: #0000ee;
-        padding: 0px !important;
+        color: #0000ee;     
+        padding: 0px !important; 
+    }
+    #pinContainer {
+        max-width: 960px;
+    }
+    .card-columns {
+        column-count: 3;
     }
 }
-
+  
 @media (min-width: 1200px) {
     .navbar img {
         max-width: 250px;
-    }
-    #pinContainer {
-        max-width: 1140px;
     }
     span.navShow {
         display: none;
     }
     span.navHide {
         display: block;
+    }
+    #pinContainer {
+        max-width: 1140px;
+    }
+    .card-columns {
+        column-count: 4;
     }
 }
 
