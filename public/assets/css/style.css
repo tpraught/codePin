@@ -122,6 +122,11 @@ header p {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.card-columns {
+    column-count: 1;
+}
+
 #pin .card-body {
     padding: 1.25rem 0 !important;
 }
@@ -135,7 +140,9 @@ header p {
 }
 
 #pin .card-text {
-    margin: 1.25rem 0;
+    margin: 1.25rem 0 0 0;
+    max-height:400px;
+    overflow-y: auto;
 }
 
 #pin .card-text p, #pin p.card-language {
@@ -155,9 +162,19 @@ a.viewPin {
     color: #000000 !important;
 }
 
+.editPinModal {
+    padding-right: 0 !important;
+}
+
 #pin .card-footer {
     padding-bottom: 1.25rem;
     border: none !important;
+    background: none !important;
+}
+
+.btn-secondary {
+    border-radius: 10px !important;
+    padding: 5px 40px !important;
 }
 
 /* Media Queries */
@@ -273,13 +290,13 @@ a.viewPin {
 }
 
 @media (min-width: 1600px) {
-    #pinContainer {
-        max-width: 1550px;
-    }
     span.navShow {
         display: none;
     }
     span.navHide {
         display: block;
+    }
+    #pinContainer {
+        max-width: 1550px;
     }
 }
