@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     content: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     }
   });
   
