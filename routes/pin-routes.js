@@ -32,6 +32,21 @@ module.exports = function (app) {
     // });
     
     
+    // GET rotue for returning pins for a user
+    // ===============================================================================================
+    app.get("/pins/user/:userid", function (req, res) {
+        db.Pin.findAll({
+                where: {
+                    UserId: req.params.userid
+                }
+            })
+            .then(function (dbPin) {
+                console.log(dbPin);
+                return res.render("index", {pins: dbPin});
+            });
+    });
+    
+    
 
     
 }; //end of export
