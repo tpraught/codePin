@@ -15,7 +15,7 @@ module.exports = {
         "dialect": "mysql"
     },
     "production": {
-        "use_env_variable": "mysql://a2ko3htk5wrn6dmg:b6ki2z9mc49svjii@ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zuqyi0dc29vbd24m",
+        "use_env_variable": "JAWSDB_URL",
         "dialect": "mysql"
     }
 };
