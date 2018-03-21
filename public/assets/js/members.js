@@ -2,13 +2,13 @@ $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   
-  var userId = "";
+  // var userId = "";
   
-  $.get("/api/user_data").then(function (data) {
-    $(".member-name").text(data.name);
-    var userId = data.id;
-    console.log(userId);
-  });
+  // $.get("/api/user_data").then(function (data) {
+  //   $(".member-name").text(data.name);
+  //   var userId = data.id;
+  //   console.log(userId);
+  // });
 
 
   //add button to create new pin 
@@ -48,6 +48,12 @@ $(document).ready(function () {
     // .catch(function(error){
     //   $("#post-message").text("Your pin was not updated.").css("color", "red");
     // });
+
+$("#editButton").on ("click", function(event){
+  console.log("hello");
+  var newDescription = $("#description").val().trim();
+  console.log(newDescription);
+})
 
 
   });
