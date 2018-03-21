@@ -21,52 +21,112 @@
         </div>
     </nav>
 </header>
+{{!-- End header/navigation --}}
 
+{{!-- ---------------------------------------------------------------------- --}}
 {{!-- Panel Container for Pins --}}
-<div class="row justify-content-center">
-    <div class="col col-md-12 col-lg-12 col-xl-12">
-        <div id="pinContainer" class="row justify-content-start card-columns ">
-            {{!-- Panel/Card for one pin --}}
-            {{#each pins}}
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div id="pin" class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="#">{{this.title}}<span class="pl-3"><i class="fas fa-eye fa-sm"></i></span></a></h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{this.description}}</h6>
-                        <div class="card-text">
-                            <p>{{this.content}}</p>
+<div id="pinContainer" class="card-columns">
+    {{!-- Panel/Card for one pin --}}
+    {{#each pins}}
+        <div id="pin" class="card">
+            <div class="card-body">
+                <a href="#" class="viewPin" data-toggle="modal" data-target="#view{{this.id}}"><h5 class="card-title">{{this.title}}<i class="fas fa-eye fa-sm"></i></h5></a>
+                <h6 class="card-subtitle mb-2 text-muted">{{this.description}}</h6>
+                <div class="card-text">
+                    <p>{{this.content}}</p>
+                </div>
+                <p class="card-language float-left">{{this.language}}</p>
+                <a href="#" class="card-link float-right editPinModal" data-toggle="modal" data-target="#edit{{this.id}}"><i class="far fa-edit fa-lg"></i><span class="pl-2">edit</span></a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+{{!-- End of pin container --}}
+
+{{!-- ---------------------------------------------------------------------- --}}
+{{!-- Edit pin modal --}}
+{{#each pins}}
+<div class="modal fade editPinModal" id="edit{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            {{!-- modal header --}}
+            <div class="modal-header">
+                <h4 class="modal-title text-center font-weight-bold" id="exampleModalLongTitle">Edit Pin</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            {{!-- modal body --}}
+            <div class="modal-body">          
+                <div class="container-fluid">
+                    <form>
+                        {{!-- row 1 --}}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{!-- <label for="name">Name</label> --}}
+                                    <input type="text" class="form-control" id="title" placeholder="Title" value="{{this.title}}" required>
+                                </div>      
+                            </div>
                         </div>
-                        <p class="card-language float-left">language</p>
-                        <a href="#editPinModal" data-toggle="modal" data-target="#editPinModal" class="card-link float-right"><i class="far fa-edit fa-lg"></i><span class="pl-2">edit</span></a>
-                    </div>
+                        {{!-- row 2 --}}
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    {{!--<label for="description">Description</label> --}}
+                                    <textarea class="form-control" id="description" rows="3" placeholder="Description" value="{{this.description}}" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="language">Language</label>
+                                    <select class="form-control" id="language" value="{{this.language}}" required>
+                                        <option value="" selected disabled>Language</option>
+                                        <option value="html">HTML</option>
+                                        <option value="css">CSS</option>
+                                        <option value="javascript">JavaScript</option>
+                                        <option value="python">Python</option>
+                                        <option value="php">PHP</option>
+                                        <option value="server">Server-side</option>
+                                        <option value="database">Database</option>                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        {{!-- row 3 --}}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{!-- <label for="snippet">Code Snippet</label> --}}
+                                    <textarea class="form-control" id="content" rows="4" placeholder="Code Snippet" value="{{this.content}}" required></textarea>
+                                </div>  
+                            </div>
+                        </div>
+                        {{!-- row 4 --}}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input class="form-control" id="link" rows="2" placeholder="website" value="{{this.link}}" required>
+                                </div>
+                            </div>
+                        </div>
+                        {{!-- modal footer --}}
+                        <div class="modal-footer" style="border-top: none">
+                            <div class="float-left" id="post-message"></div>
+                            <button type="submit" class="btn btn-primary float-right" id="submit">edit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            {{/each}}
         </div>
     </div>
 </div>
+{{/each}}
+{{!-- end of edit pin modal --}}
 
-{{!-- edit modal needs to go up here, above the add modal --}}
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            ...
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-        </div>
-    </div>
-</div>
-
+{{!-- ---------------------------------------------------------------------- --}}
 {{!-- Add pin modal --}}
 <div class="modal fade" id="newPinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -133,10 +193,10 @@
                                 </div>
                             </div>
                         </div>
-                            {{!-- modal footer --}}
+                        {{!-- modal footer --}}
                         <div class="modal-footer" style="border-top: none">
-                            <button type="submit" class="btn btn-primary float-right" id="submit">Add</button>
                             <div class="float-left" id="post-message"></div>
+                            <button type="submit" class="btn btn-primary float-right" id="submit">add</button>
                         </div>
                     </form>
                 </div>
@@ -144,24 +204,33 @@
         </div>
     </div>
 </div>
+{{!-- End add pin modal --}}
 
-{{!-- View modal --}}
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+{{!-- ---------------------------------------------------------------------- --}}
+{{!-- View pin modal --}}
+{{#each pins}}
+<div class="modal fade viewPin" id="view{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">{{this.title}}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
-            ...
+            {{this.description}}<br />
+            {{this.content}}<br />
+            {{this.language}}<br />
+            {{this.link}}
+            <a class="card-link float-right editPinModal" data-toggle="modal" data-target="#edit{{this.id}}"><i class="far fa-edit fa-lg"></i><span class="pl-2">edit</span></a>
         </div>
+        
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
         </div>
         </div>
     </div>
 </div>
+{{/each}}
+{{!-- End view pin modal --}}

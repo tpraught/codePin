@@ -19,17 +19,17 @@ module.exports = function (app) {
     
     // GET rotue for retrieving a single pin.
     // ===============================================================================================
-    app.get("/pins/:id", function (req, res) {
-        db.Pin.findOne({
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(function (dbPin) {
-                console.log(dbPin);
-                return res.render("read", {pin: dbPin});
-            });
-    });
+    // app.get("/:id", function (req, res) {
+    //     db.Pin.findOne({
+    //             where: {
+    //                 id: req.params.id
+    //             }
+    //         })
+    //         .then(function (dbPin) {
+    //             console.log(dbPin);
+    //             return res.render("index", {pin: dbPin});
+    //         });
+    // });
     
     
 

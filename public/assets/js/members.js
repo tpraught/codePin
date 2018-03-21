@@ -17,7 +17,8 @@ $(document).ready(function () {
       title: $("#title").val().trim(),
       description: $("#description").val().trim(),
       language: $("#language").val().trim(),
-      content: $("#content").val().trim()
+      content: $("#content").val().trim(),
+      link: $("#link").val().trim()
     };
     console.log(newPin);
     //ajax post call to send new pin data to db and return success/error message to user
@@ -27,7 +28,7 @@ $(document).ready(function () {
         location.reload();
       })
       .catch(function (error) {
-        $("#post-message").text("Oops, that didn't work.");
+        $("#post-message").text("Oops, that didn't work.").css("color", "red");
       });    
     });
 
