@@ -1,8 +1,13 @@
 $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
+  
+  var userId = "";
+  
   $.get("/api/user_data").then(function (data) {
     $(".member-name").text(data.name);
+    var userId = data.id;
+    console.log(userId);
   });
 
 
@@ -17,7 +22,9 @@ $(document).ready(function () {
       title: $("#title").val().trim(),
       description: $("#description").val().trim(),
       language: $("#language").val().trim(),
-      content: $("#content").val().trim()
+      content: $("#content").val().trim(),
+      link: $("#link").val().trim(),
+      UserId: $("#user-id").val().trim(),
     };
     console.log(newPin);
     //ajax post call to send new pin data to db and return success/error message to user
