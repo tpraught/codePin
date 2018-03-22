@@ -102,7 +102,7 @@ module.exports = function (app) {
             content: req.body.content
         }, {
             where: {
-                id: req.body.id
+                id: req.params.id
             }
         }).then(function (dbPin) {
             res.json(dbPin);
