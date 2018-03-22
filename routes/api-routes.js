@@ -92,7 +92,7 @@ module.exports = function (app) {
 
     // PUT route for updating pins
     // ===============================================================================================
-    app.put("/api/pins", function (req, res) {
+    app.put("/api/pins/:id", function (req, res) {
 
         db.Pin.update({
             title: req.body.title,
