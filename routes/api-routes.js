@@ -67,7 +67,8 @@ module.exports = function (app) {
             description: req.body.description,
             language: req.body.language,
             link: req.body.link,
-            content: req.body.content
+            content: req.body.content,
+            UserId: req.body.UserId
         }).then(function (dbPin) {
             res.json(dbPin);
         });
