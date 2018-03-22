@@ -10,6 +10,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.clearfix::after {
+    content: "";
+    display:block;
+    clear:both;
+}
+
 a {
     color: #0000ee;
     text-decoration: none;
@@ -57,11 +63,6 @@ button.login {
     padding: 5px 40px !important;
 }
 
-/* Modals */
-/* .modal-title h5 {
-    text-align: center;
-} */
-
 button#submit {
     margin-top:30px;
     background: #0000ee;
@@ -95,28 +96,12 @@ header p {
     padding: 5px 40px !important;
 }
 
-/* .modal-body input {
-    background: #e2e2e2;
-    border:none;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    
-} */
-
 .modal-body textarea, .modal-body select, .modal-body input {
     background: #e2e2e2;
     border: none;
     border-radius: 10px;
     margin-bottom: 20px;    
 }
-  
-/* .modal-body select {
-    background: #e2e2e2;
-    border:none;
-    border-radius: 10px;
-    margin-bottom: 20px;    
-
-} */
 
 .fa-user-circle {
     color: #0000ee;
@@ -137,6 +122,11 @@ header p {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.card-columns {
+    column-count: 1;
+}
+
 #pin .card-body {
     padding: 1.25rem 0 !important;
 }
@@ -150,13 +140,14 @@ header p {
 }
 
 #pin .card-text {
-    margin: 1.25rem 0;
-    padding: 1.25rem 0;
-    background: #cdcdcd;
+    margin: 1.25rem 0 0 0;
+    max-height:400px;
+    overflow-y: auto;
 }
 
 #pin .card-text p, #pin p.card-language {
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 #pin h5.card-title a {
@@ -165,6 +156,25 @@ header p {
 
 #pin .fa-eye {
     color: #0000ee;
+}
+
+a.viewPin {
+    color: #000000 !important;
+}
+
+.editPinModal {
+    padding-right: 0 !important;
+}
+
+#pin .card-footer {
+    padding-bottom: 1.25rem;
+    border: none !important;
+    background: none !important;
+}
+
+.btn-secondary {
+    border-radius: 10px !important;
+    padding: 5px 40px !important;
 }
 
 /* Media Queries */
@@ -187,14 +197,14 @@ header p {
         color: #0000ee;     
         padding: 0px !important;   
     }
+    .card-columns {
+        column-count: 1;
+    }
 }
   
 @media (min-width: 576px) {
     .navbar img {
         max-width: 175px;
-    }
-    #pinContainer {
-        max-width: 540px;
     }
     span.navHide {
         display: none;
@@ -208,14 +218,17 @@ header p {
         color: #0000ee;    
         padding: 0px !important;   
     }
+    #pinContainer {
+        max-width: 540px;
+    }
+    .card-columns {
+        column-count: 2;
+    }
 }
 
 @media (min-width: 768px) {
     .navbar img {
         max-width: 200px;
-    }
-    #pinContainer {
-        max-width: 740px;
     }
     span.navHide {
         display: none;
@@ -229,12 +242,15 @@ header p {
         color: #0000ee;  
         padding: 0px !important;    
     }
+    #pinContainer {
+        max-width: 740px;
+    }
+    .card-columns {
+        column-count: 3;
+    }
 }
 
 @media (min-width: 992px) {
-    #pinContainer {
-        max-width: 960px;
-    }
     span.navHide {
         display: none;
     }
@@ -247,31 +263,40 @@ header p {
         color: #0000ee;     
         padding: 0px !important; 
     }
+    #pinContainer {
+        max-width: 960px;
+    }
+    .card-columns {
+        column-count: 3;
+    }
 }
   
 @media (min-width: 1200px) {
     .navbar img {
         max-width: 250px;
     }
-    #pinContainer {
-        max-width: 1140px;
-    }
     span.navShow {
         display: none;
     }
     span.navHide {
         display: block;
+    }
+    #pinContainer {
+        max-width: 1140px;
+    }
+    .card-columns {
+        column-count: 4;
     }
 }
 
 @media (min-width: 1600px) {
-    #pinContainer {
-        max-width: 1550px;
-    }
     span.navShow {
         display: none;
     }
     span.navHide {
         display: block;
+    }
+    #pinContainer {
+        max-width: 1550px;
     }
 }
