@@ -9,7 +9,7 @@ module.exports = function (app) {
     
     // GET route for getting all pins.
     // ===============================================================================================
-    app.get("/", function (req, res) {
+    app.get("/members", function (req, res) {
 
         db.Pin.findAll({}).then(function (dbPin) {
             return res.render("index", {pins: dbPin});
