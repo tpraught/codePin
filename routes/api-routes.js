@@ -103,7 +103,8 @@ module.exports = function (app) {
             description: req.body.description,
             language: req.body.language,
             link: req.body.link,
-            content: req.body.content
+            content: req.body.content,
+            UserId: req.body.UserId
         }, {
             where: {
                 id: req.params.id

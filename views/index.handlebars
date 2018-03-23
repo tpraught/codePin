@@ -43,7 +43,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     {{!-- <label for="name">Name</label> --}}
-                                    <input type="text" class="form-control" id="title" placeholder="{{this.title}}" value="{{this.title}}" required>
+                                    <input type="text" class="form-control" id="title-edit" value="{{this.title}}" required>
                                 </div>      
                             </div>
                         </div>
@@ -52,13 +52,13 @@
                             <div class="col-sm-8">
                                 <div class="form-group">
                                     {{!--<label for="description">Description</label> --}}
-                                    <textarea class="form-control" id="description" rows="3" placeholder="{{this.description}}" value="{{this.description}}"required></textarea>
+                                    <textarea class="form-control" id="description-edit" rows="3" required>{{this.description}}</textarea>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="language">Language</label>
-                                    <select class="form-control" id="language" required>
+                                    <select class="form-control" id="language-edit" value ="{{this.language}}" required>
                                         <option value="" selected disabled>Language</option>
                                         <option value="html">HTML</option>
                                         <option value="css">CSS</option>
@@ -76,7 +76,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     {{!-- <label for="snippet">Code Snippet</label> --}}
-                                    <textarea class="form-control" id="content" rows="4" placeholder="{{this.content}}" value="{{this.content}}" required></textarea>
+                                    <textarea class="form-control" id="content-edit" rows="4" required>{{this.content}}</textarea>
                                 </div>  
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <input class="form-control" id="link" rows="2" placeholder="{{this.link}}" value="{{this.link}}" required>
+                                    <input class="form-control" id="link-edit" rows="2" value="{{this.link}}" required>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <input class="form-control" id="user-id" rows="2" placeholder="user id" required>
+                                    <input class="form-control" id="user-id-edit" rows="2" value="{{this.User.id}}" required>
                                 </div>
                             </div>
                         </div>
