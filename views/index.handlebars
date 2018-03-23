@@ -1,27 +1,6 @@
-{{!-- Logo & Navigation Container --}}
-<header id="pinContainer">
-    <nav class="navbar sticky-top navbar-light">
-        <div class="d-flex justify-content-start">
-            <a class="navbar-brand" href="#"><img src="../assets/images/logo_codePin.svg" /></a>
-        </div>
-
-        <div class="d-flex justify-content-end">
-            <div class="p-2">
-                <span class="navHide"><p class="pt-1 pb-1"><i class="fas fa-user-circle fa-lg"></i><span class="pl-2 member-name"></span></p></span>
-                <span class="navShow"><p><i class="fas fa-user-circle fa-lg"></i></p></span>
-            </div>
-            <div class="p-2">
-                <span class="navHide"><p class="pt-1 pb-1"><a href="logout"><i class="fas fa-power-off fa-lg"></i><span class="pl-2">Logout</span></a></p></span>
-                <span class="navShow"><p><a href="logout"><i class="fas fa-power-off fa-lg"></i></a></p></span>
-            </div>
-            <div class="p-2">
-                <span class="navHide"><button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal"><i class="fas fa-plus-circle fa-lg"></i> Add Pin</button></span>
-                <span class="navShow"><button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal"><i class="fas fa-plus-circle fa-lg"></i></button></span>
-            </div>
-        </div>
-    </nav>
-</header>
-{{!-- End header/navigation --}}
+{{!-- Inserting of the header --}}
+	{{> header }}
+{{!-- End of the header insert --}}
 
 {{!-- ---------------------------------------------------------------------- --}}
 {{!-- Panel Container for Pins --}}
@@ -213,8 +192,10 @@
                         </div>
                             {{!-- modal footer --}}
                         <div class="modal-footer" style="border-top: none">
-                            <button type="submit" class="btn btn-primary float-right" id="submit">Add</button>
-                            <div class="float-left" id="post-message"></div>
+                            <div class="col-sm-12 col-md-6" id="post-message"></div>
+                            <div class="col-sm-12 col-md-6 float-right pr-0">
+                                <button type="submit" class="btn btn-primary float-right" id="submit">Add</button>
+                            </div>
                         </div>
                     </form>
                 </div>
