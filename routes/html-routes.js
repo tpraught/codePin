@@ -1,5 +1,8 @@
+// Requiring models
+// ===============================================================================================
+var db = require("../models");
+var passport = require("../config/passport");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-
 
 module.exports = function(app) {
 
@@ -19,20 +22,17 @@ module.exports = function(app) {
     res.render("login");
   });
 
+  // GET route for getting all pins.
+  // ==========================================================================================
   app.get("/members", isAuthenticated, function (req, res) {
-    res.render("index");
+    db.Pin.findAll({}).then(function (dbPin) {
+      return res.render("index", {pins: dbPin});
+    });
   });
 
   // Rendering the About page
   app.get("/about", function (req, res) {
     res.render("aboutPage");
   });
-  
-  // app.get("/login", function(req, res) {
-  //   res.render("login");
-  // });
 
-  // app.get("/signup", function(req, res) {
-  //   res.render("signUp");
-  // });
 };
