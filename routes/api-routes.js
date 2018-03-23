@@ -26,7 +26,9 @@ module.exports = function (app) {
                 }
             })
             .then(function (dbPin) {
+                console.log(dbPin);
                 res.json(dbPin);
+                return res.render("read", {pin: dbPin})
             });
     });
     
@@ -39,7 +41,9 @@ module.exports = function (app) {
                 }
             })
             .then(function (dbPin) {
+                console.log(dbPin);
                 res.json(dbPin);
+                return res.render("index", {pins: dbPin});
             });
     });
 
