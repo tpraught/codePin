@@ -71,7 +71,7 @@ $(document).ready(function () {
       type: "PUT",
       data: editedPin
     }).then(function() {
-      window.location.href = "/memebers";
+      window.location.href = "/members";
     });
   });
 
