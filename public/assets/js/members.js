@@ -43,6 +43,21 @@ $(document).ready(function () {
       });    
     });
 
+  // delete button to delete a pin
+  //=========================================================================================
+  $("#deleteButton").on("click", function(event){
+    console.log("delete");
+    event.stopPropagation();
+    var id=$("#editForm").data("type");
+    console.log(id);
+    $.ajax({
+      method: "DELETE",
+      url: "/api/pins/" + id
+    }).then(function() {
+      window.location.href = "/members";
+    });
+  });
+
   // edit button to update a pin
   //=========================================================================================
   $("#editForm").on("submit", function(event){
@@ -75,5 +90,4 @@ $(document).ready(function () {
     });
   });
 
-
-  });
+});
