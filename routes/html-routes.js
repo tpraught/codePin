@@ -30,6 +30,21 @@ module.exports = function(app) {
     });
   });
 
+  // Rending the Edit page
+    // GET rotue for retrieving a single pin.
+    // ===============================================================================================
+    app.get("/edit/:id", function (req, res) {
+      db.Pin.findOne({
+              where: {
+                  id: req.params.id
+              }
+          })
+          .then(function (dbPin) {
+              res.json(dbPin);
+              return res.render("edit", {pin: dbPin})
+          });
+  });
+
   // Rendering the About page
   app.get("/about", function (req, res) {
     res.render("aboutPage");

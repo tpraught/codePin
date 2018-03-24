@@ -124,7 +124,7 @@ header p {
 }
 
 .card-columns {
-    column-count: 1;
+    column-count: 4;
 }
 
 #pin .card-body {
@@ -298,5 +298,8 @@ a.viewPin {
     }
     #pinContainer {
         max-width: 1550px;
+    }
+    .card-columns {
+        column-count: 4;
     }
 }
