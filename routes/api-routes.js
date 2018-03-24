@@ -20,7 +20,7 @@ module.exports = function (app) {
     // GET rotue for retrieving a single pin.
     // ===============================================================================================
     app.get("/api/pins/:id", function (req, res) {
-        console.log("get" + id);
+        console.log("get" + req);
         db.Pin.findOne({
                 where: {
                     id: req.params.id
@@ -28,7 +28,6 @@ module.exports = function (app) {
             })
             .then(function (dbPin) {
                 console.log(dbPin);
-                res.json(dbPin);
                 return res.render("index", {pin: dbPin})
             });
     });
@@ -43,7 +42,6 @@ module.exports = function (app) {
             })
             .then(function (dbPin) {
                 console.log(dbPin);
-                res.json(dbPin);
                 return res.render("index", {pins: dbPin});
             });
     });
@@ -97,7 +95,7 @@ module.exports = function (app) {
     // PUT route for updating pins
     // ===============================================================================================
     app.put("/api/pins/:id", function (req, res) {
-        console.log(id);
+        console.log(req);
         db.Pin.update({
             title: req.body.title,
             description: req.body.description,
