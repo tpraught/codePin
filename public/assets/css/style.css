@@ -36,7 +36,8 @@ a:hover {
 	height: 100vh;
 }
 
-#loginContainer {
+#loginContainer, .formContainer {
+    background: #ffffff;
     border: 2px solid #b7b7b7;
     border-radius: 10px;
     padding: 40px 30px;
@@ -298,8 +299,5 @@ a.viewPin {
     }
     #pinContainer {
         max-width: 1550px;
-    }
-    .card-columns {
-        column-count: 4;
     }
 }

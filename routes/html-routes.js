@@ -40,7 +40,7 @@ module.exports = function(app) {
               }
           })
           .then(function (dbPin) {
-              res.json(dbPin);
+              // res.json(dbPin);
               return res.render("edit", {pin: dbPin})
           });
   });
