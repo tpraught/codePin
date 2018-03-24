@@ -12,6 +12,7 @@ $(document).ready(function () {
 
 
   //add button to create new pin 
+  //=========================================================================================
 
   $("#newForm").on("submit", function (event) {
 
@@ -35,7 +36,7 @@ $(document).ready(function () {
               
         $("#post-message").text("Successfully posted!").css("color", "green");
         // var dbId = data.id
-        // location.reload();
+        location.reload();
       })
       .catch(function (error) {
         $("#post-message").text("Oops, that didn't work.");
@@ -53,6 +54,9 @@ $(document).ready(function () {
     //   $("#post-message").text("Your pin was not updated.").css("color", "red");
     // });
 
+  // edit button to update a pin
+  //=========================================================================================
+  
 $("#editForm").on("submit", function(event){
   
   event.preventDefault();
@@ -65,12 +69,12 @@ $("#editForm").on("submit", function(event){
   // console.log(newDescription);
   
   var editedPin = {
-    title: $("#title").val().trim(),
-    description: $("#description").val().trim(),
-    language: $("#language").val().trim(),
-    content: $("#content").val().trim(),
-    link: $("#link").val().trim(),   
-    UserId: $("#user-id").val().trim()
+    title: $("#title-edit").val().trim(),
+    description: $("#description-edit").val().trim(),
+    language: $("#language-edit").val().trim(),
+    content: $("#content-edit").val().trim(),
+    link: $("#link-edit").val().trim(),   
+    UserId: parseInt($("#user-id-edit").val().trim())
   };
 
 

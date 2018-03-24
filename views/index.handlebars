@@ -1,27 +1,6 @@
-{{!-- Logo & Navigation Container --}}
-<header id="pinContainer">
-    <nav class="navbar sticky-top navbar-light">
-        <div class="d-flex justify-content-start">
-            <a class="navbar-brand" href="#"><img src="../assets/images/logo_codePin.svg" /></a>
-        </div>
-
-        <div class="d-flex justify-content-end">
-            <div class="p-2">
-                <span class="navHide"><p class="pt-1 pb-1"><i class="fas fa-user-circle fa-lg"></i><span class="pl-2 member-name"></span></p></span>
-                <span class="navShow"><p><i class="fas fa-user-circle fa-lg"></i></p></span>
-            </div>
-            <div class="p-2">
-                <span class="navHide"><p class="pt-1 pb-1"><a href="logout"><i class="fas fa-power-off fa-lg"></i><span class="pl-2">Logout</span></a></p></span>
-                <span class="navShow"><p><a href="logout"><i class="fas fa-power-off fa-lg"></i></a></p></span>
-            </div>
-            <div class="p-2">
-                <span class="navHide"><button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal"><i class="fas fa-plus-circle fa-lg"></i> Add Pin</button></span>
-                <span class="navShow"><button type="button" class="btn btn-primary" id="addPin" data-toggle="modal" data-target="#newPinModal"><i class="fas fa-plus-circle fa-lg"></i></button></span>
-            </div>
-        </div>
-    </nav>
-</header>
-{{!-- End header/navigation --}}
+{{!-- Inserting of the header --}}
+	{{> header }}
+{{!-- End of the header insert --}}
 
 {{!-- ---------------------------------------------------------------------- --}}
 {{!-- Panel Container for Pins --}}
@@ -64,7 +43,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     {{!-- <label for="name">Name</label> --}}
-                                    <input type="text" class="form-control" id="title" placeholder="{{this.title}}" value="{{this.title}}" required>
+                                    <input type="text" class="form-control" id="title-edit" value="{{this.title}}" required>
                                 </div>      
                             </div>
                         </div>
@@ -73,13 +52,13 @@
                             <div class="col-sm-8">
                                 <div class="form-group">
                                     {{!--<label for="description">Description</label> --}}
-                                    <textarea class="form-control" id="description" rows="3" placeholder="{{this.description}}" value="{{this.description}}"required></textarea>
+                                    <textarea class="form-control" id="description-edit" rows="3" required>{{this.description}}</textarea>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="language">Language</label>
-                                    <select class="form-control" id="language" required>
+                                    <select class="form-control" id="language-edit" value ="{{this.language}}" required>
                                         <option value="" selected disabled>Language</option>
                                         <option value="html">HTML</option>
                                         <option value="css">CSS</option>
@@ -97,7 +76,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     {{!-- <label for="snippet">Code Snippet</label> --}}
-                                    <textarea class="form-control" id="content" rows="4" placeholder="{{this.content}}" value="{{this.content}}" required></textarea>
+                                    <textarea class="form-control" id="content-edit" rows="4" required>{{this.content}}</textarea>
                                 </div>  
                             </div>
                         </div>
@@ -105,7 +84,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <input class="form-control" id="link" rows="2" placeholder="{{this.link}}" value="{{this.link}}" required>
+                                    <input class="form-control" id="link-edit" rows="2" value="{{this.link}}" required>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +92,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <input class="form-control" id="user-id" rows="2" placeholder="user id" required>
+                                    <input class="form-control" id="user-id-edit" rows="2" value="{{this.User.id}}" required>
                                 </div>
                             </div>
                         </div>
@@ -213,8 +192,10 @@
                         </div>
                             {{!-- modal footer --}}
                         <div class="modal-footer" style="border-top: none">
-                            <button type="submit" class="btn btn-primary float-right" id="submit">Add</button>
-                            <div class="float-left" id="post-message"></div>
+                            <div class="col-sm-12 col-md-6" id="post-message"></div>
+                            <div class="col-sm-12 col-md-6 float-right pr-0">
+                                <button type="submit" class="btn btn-primary float-right" id="submit">Add</button>
+                            </div>
                         </div>
                     </form>
                 </div>
