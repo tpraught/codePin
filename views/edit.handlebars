@@ -1,0 +1,81 @@
+{{!-- Inserting of the header --}}
+	{{> header }}
+{{!-- End of the header insert --}}
+
+<div class="container loginBkg align-middle">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-10 formContainer">
+            <h4>Edit your pin</h4>
+            <form id="editForm" data-type="{{pin.id}}">
+                {{!-- row 1 --}}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            {{!-- <label for="name">Name</label> --}}
+                            <input type="text" class="form-control" id="title-edit" value="{{pin.title}}" required>
+                        </div>      
+                    </div>
+                </div>
+                {{!-- row 2 --}}
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            {{!--<label for="description">Description</label> --}}
+                            <textarea class="form-control" id="description-edit" rows="3" required>{{pin.description}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="language">Language</label>
+                            <select class="form-control" id="language-edit" value ="{{pin.language}}" required>
+                                <option value="" selected disabled>Language</option>
+                                <option value="html">HTML</option>
+                                <option value="css">CSS</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="python">Python</option>
+                                <option value="php">PHP</option>
+                                <option value="server">Server-side</option>
+                                <option value="database">Database</option>                                        
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                {{!-- row 3 --}}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            {{!-- <label for="snippet">Code Snippet</label> --}}
+                            <textarea class="form-control" id="content-edit" rows="4" required>{{pin.content}}</textarea>
+                        </div>  
+                    </div>
+                </div>
+                {{!-- row 4 --}}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input class="form-control" id="link-edit" rows="2" value="{{pin.link}}" required>
+                        </div>
+                    </div>
+                </div>
+                {{!-- row 5 users --}}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input class="form-control" id="user-id-edit" rows="2" value="{{pin.User.id}}" required>
+                        </div>
+                    </div>
+                </div>
+                    {{!-- modal footer --}}
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary">Close</button>
+                        <button type="submit" id="editButton" class="btn btn-primary">Save changes</button>
+                        <div class="float-left" id="post-message"></div>
+                    </div>
+                {{!-- <div class="modal-footer" style="border-top: none">
+                    <button type="submit" class="btn btn-primary float-right" id="submit">Add</button>
+                    <div class="float-left" id="post-message"></div>
+                </div> --}}
+            </form>
+        </div>
+    </div>
+</div>

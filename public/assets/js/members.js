@@ -43,65 +43,37 @@ $(document).ready(function () {
       });    
     });
 
-    ///ajax update call
-    //event handler goes here. need to trigger modal via edit buttons
-    
-    // $.put("/api/pins", newPin)
-    // .then(function(data){
-    //   $("#post-message").text("Successfully updated.").css("color", "green");
-    // })
-    // .catch(function(error){
-    //   $("#post-message").text("Your pin was not updated.").css("color", "red");
-    // });
-
   // edit button to update a pin
   //=========================================================================================
-  
-$("#editForm").on("submit", function(event){
-  
-  event.preventDefault();
-  
-  console.log(this);
-  // var id = $("#editForm").data("type");
-  var id=$("#editForm").data("type");
-  console.log(id);
-  // var newDescription = $("#description").val().trim();
-  // console.log(newDescription);
-  
-  var editedPin = {
-    title: $("#title-edit").val().trim(),
-    description: $("#description-edit").val().trim(),
-    language: $("#language-edit").val().trim(),
-    content: $("#content-edit").val().trim(),
-    link: $("#link-edit").val().trim(),   
-    UserId: parseInt($("#user-id-edit").val().trim())
-  };
+  $("#editForm").on("submit", function(event){
+    event.preventDefault();
+    
+    console.log(this);
+    // var id = $("#editForm").data("type");
+    var id=$("#editForm").data("type");
+    console.log(id);
+    // var newDescription = $("#description").val().trim();
+    // console.log(newDescription);
+    
+    var editedPin = {
+      title: $("#title-edit").val().trim(),
+      description: $("#description-edit").val().trim(),
+      language: $("#language-edit").val(),
+      content: $("#content-edit").val().trim(),
+      link: $("#link-edit").val().trim(),   
+      UserId: parseInt($("#user-id-edit").val().trim())
+    };
 
+    console.log(editedPin);
 
-  console.log(editedPin);
-
-  $.ajax({
-    url:"/api/pins/" + id,
-    type: "PUT",
-    data: editedPin,
-    success: function(data){
-      $("#post-message").text("Successfully updated.").css("color", "green");
-    }
+    $.ajax({
+      url:"/api/pins/" + id,
+      type: "PUT",
+      data: editedPin
+    }).then(function() {
+      window.location.href = "/memebers";
+    });
   });
-
-  
-
-  
-    //   $.put("/api/pins", editedPin)
-    // .then(function(data){
-    //   $("#post-message").text("Successfully updated.").css("color", "green");
-    // })
-    // .catch(function(error){
-    //   $("#post-message").text("Your pin was not updated.").css("color", "red");
-    // });
-
-
-})
 
 
   });
