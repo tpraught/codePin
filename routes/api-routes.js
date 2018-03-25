@@ -111,7 +111,5 @@ module.exports = function (app) {
             res.json(dbPin);
         });
     });
-
-
-
+    
 }; //end of export
