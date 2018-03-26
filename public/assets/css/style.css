@@ -36,7 +36,7 @@ a:hover {
 	height: 100vh;
 }
 
-#loginContainer, .formContainer {
+#loginContainer{
     background: #ffffff;
     border: 2px solid #b7b7b7;
     border-radius: 10px;
@@ -84,7 +84,7 @@ header p {
     margin-left: auto;
 }
 
-/* Logo on main page */
+/* Main page */
 .navbar img {
     max-width: 250px;
     width: 100%;
@@ -97,7 +97,42 @@ header p {
     padding: 5px 40px !important;
 }
 
-.modal-body textarea, .modal-body select, .modal-body input {
+#aboutBtnContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+#aboutBtnContainer .btn-light {
+    padding: 10px 17px !important;
+    border-radius: 30px !important;
+    border: none;
+}
+
+.fa-question {
+    color: #b1b1b1;
+}
+
+a.linkedBtn, 
+a:hover.linkedBtn {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.formContainer {
+    background: #ffffff;
+    border: 2px solid #b7b7b7;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.modal-body textarea,
+.modal-body select,
+.modal-body input,
+.formContainer textarea, 
+.formContainer select, 
+.formContainer input {
     background: #e2e2e2;
     border: none;
     border-radius: 10px;
@@ -132,7 +167,11 @@ header p {
     padding: 1.25rem 0 !important;
 }
 
-#pin h5, #pin h6, #pin p, #pin a.card-link {
+#pin h5, 
+#pin h6, 
+#pin p, 
+#pin 
+a.card-link {
     padding: 0 1.25rem;
 }
 
@@ -146,7 +185,8 @@ header p {
     overflow-y: auto;
 }
 
-#pin .card-text p, #pin p.card-language {
+#pin .card-text p, 
+#pin p.card-language {
     margin: 0 !important;
     padding: 0 !important;
 }
@@ -161,10 +201,6 @@ header p {
 
 a.viewPin {
     color: #000000 !important;
-}
-
-.editPinModal {
-    padding-right: 0 !important;
 }
 
 #pin .card-footer {
