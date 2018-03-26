@@ -27,6 +27,7 @@ Code pin is a javascript application whose intent is to allow a user to save and
 * [Bootstrap](http://getbootstrap.com/)
 * [Passport](http://www.passportjs.org/)
 * [Handlebars js](http://handlebarsjs.com/)
+* [Highlight.js](https://highlightjs.org/)
 
 ### Authors
 * [Derrick Guy](https://github.com/mrderrickguy)
