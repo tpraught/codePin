@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Submitting new feedback 
     // =========================================================================================
 
-    $("#feedbackBtn").on("submit", function (event) {
+    $("#submitFeedback").on("submit", function (event) {
 
     event.preventDefault();
 
@@ -11,6 +11,7 @@ $(document).ready(function () {
     var newFeedback = {
         firstName: $("#firstName").val().trim(),
         lastName: $("#lastName").val().trim(),
+        emailAddress: $("#emailAddress").val().trim(),
         feedback: $("#feedback").val()
     };
     console.log(newFeedback);
