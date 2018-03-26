@@ -1,32 +1,67 @@
 
 
 {{!-- Inserting of the header --}}
-	{{> header }}
+	{{> minHeader }}
 {{!-- End of the header insert --}}
 
+<div id="pinContainer">
 
-		
-		  	<div class="container">
-		    			<h1 class="display-4" id="aboutP">About CodePin</h1>
-						  	<h2 class="alert-heading" id="heading">Welcome to CodePin! A note pad for your code.</h2><br><br>
-							<h1 class="para">Want a place to go to to put a block of code to reference for later?</h1><br>
-						<h3 id="hthree">Well look no further!</h3>
-					<hr>
+	<div class="row">
+
+		<div id="aboutContainer" class="col-12 col-lg-7 mr-auto mb-5">
+			<h1 class="font-weight-bold">About Us</h1>
+			<hr />
+			<h4>Welcome to CODEpin! A note pad for your code</h4>
+			<h4>Want a place to go to to put a block of code to reference for later? Well look no further!</h4>
+			<div class="row no-gutters mt-4 mb-3">
+				<div class="col-3">
+					<h4 class="font-weight-bold">Simply add a pin and have access to it when the need arises! <span class="arrow"><i class="far fa-arrow-alt-circle-right"></i></span></h4>
+				</div>
+				<div class="col-8 ml-auto">
+					<img src="../assets/images/img_addPinScreenshot.png" class="screenshot" />
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 col-lg-4 col-lg-offset formContainer mb-5">
+			<div class="row">
+				<div class="col-12 pb-3 mb-3">
+					<h2 class="pt-2">Send us your feedback</h2>
+					<hr />
+				</div>
+			</div>
+			<form id="newFeedback">
 				<div class="row">
-					<div col-sm-4>
-						<img src="../assets/images/Screenshot.png.png" width="300px" height="300" id="image">
+					<div class="col-sm-12 form-group">
+						<input type="text" class="form-control" id="firstName" placeholder="First Name" required>
 					</div>
-					<div class="row">
-					<div col-sm-4>
-					
-						<i class="material-icons" id="arrow">&#xe5d9;</i>
-						
+				</div>
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
 					</div>
-					<div class="row">
-					<div col-sm-4>
-					<h2 id="codePlace"> Simpy place your code here and </h2>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<input type="text" class="form-control" id="emailAddress" placeholder="Email Address" required>
 					</div>
-			</div>	
+				</div>
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<textarea class="form-control" id="feedback" rows="4" placeholder="Feedback" required></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 float-right">
+						<button type="submit" class="btn btn-primary float-right" id="submitFeedback">Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+</div>	
 				
 				 
 				

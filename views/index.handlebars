@@ -30,7 +30,7 @@
         <div class="modal-content">
             {{!-- modal header --}}
             <div class="modal-header">
-                <h4 class="modal-title text-center font-weight-bold" id="exampleModalLongTitle">Create Pin</h4>
+                <h4 class="modal-title font-weight-bold" id="exampleModalLongTitle">Create Pin</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -44,8 +44,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    {{!-- <label for="name">Name</label> --}}
-                                    <input type="text" class="form-control" id="title" placeholder="Title" required>
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" id="title" placeholder="name of your resource" required>
                                 </div>      
                             </div>
                         </div>
@@ -53,8 +53,8 @@
                         <div class="row">
                             <div class="col-sm-8">
                                 <div class="form-group">
-                                    {{!--<label for="description">Description</label> --}}
-                                    <textarea class="form-control" id="description" rows="3" placeholder="Description" required></textarea>
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control" id="description" rows="3" placeholder="describe what you are pinning" required></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -77,8 +77,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    {{!-- <label for="snippet">Code Snippet</label> --}}
-                                    <textarea class="form-control" id="content" rows="4" placeholder="Code Snippet" required></textarea>
+                                    <label for="snippet">Code Snippet</label>
+                                    <textarea class="form-control" id="content" rows="4" placeholder="what's the code?"></textarea>
                                 </div>  
                             </div>
                         </div>
@@ -86,7 +86,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <input class="form-control" id="link" rows="2" placeholder="website" required>
+                                    <label for="website">Wedsite</label>
+                                    <input class="form-control" id="link" rows="2" placeholder="http://[websiteURLhere].com" required>
                                 </div>
                             </div>
                         </div>
@@ -98,11 +99,11 @@
                                 </div>
                             </div>
                         </div>
-                            {{!-- modal footer --}}
-                        <div class="modal-footer" style="border-top: none">
-                            <div class="col-sm-12 col-md-6" id="post-message"></div>
-                            <div class="col-sm-12 col-md-6 float-right pr-0">
-                                <button type="submit" class="btn btn-primary float-right" id="submit">Add</button>
+                        {{!-- modal footer --}}
+                        <div class="row mt-3 mb-3">
+                            <div class="col-sm-12 col-md-6 text-left" id="post-message"></div>
+                            <div class="col-sm-12 col-md-6 text-right">
+                                <button type="submit" class="btn btn-primary float-right mt-0" id="submit">Add</button>
                             </div>
                         </div>
                     </form>
