@@ -213,6 +213,43 @@ a.viewPin {
     border-radius: 10px !important;
     padding: 5px 40px !important;
 }
+.jumbotron{
+    background-color: lightgray;
+}
+#aboutP{text-align: center; 
+    color: blue;
+    font-family: 'Lobster', cursive;
+    text-decoration-color: lightblue;
+    
+}
+
+/*#image{
+    needs a border.
+}*/
+.para{
+    font-family: 'Patua One', cursive;
+    text-align: center; 
+    color: blue;
+    text-shadow: 2px 0px 2px gray;
+}
+.note{
+    text-align: center; 
+    font-family: 'Lobster', cursive;
+    color: blue;
+    font-weight: bold;
+}
+#heading,#hthree{
+    font-family: 'Rammetto One', cursive;
+    font-size: 24px;
+    text-align: center; 
+    color: blue;
+   text-shadow: 2px 0px 2px gray; 
+}
+.material-icons{
+    float-right: 2rem;
+    color: blue;
+    font-size:80px;
+}
 
 /* Media Queries */
 @media (min-width: 300px) {
