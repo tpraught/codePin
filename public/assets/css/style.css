@@ -232,6 +232,11 @@ img.screenshot {
 #aboutContainer span.arrow {
     color: #0000ee;
 }
+.copyright{
+    font-size:20px;
+    font-weight: bold;
+    text-align: center;
+}
 
 /* Media Queries */
 @media (min-width: 300px) {
