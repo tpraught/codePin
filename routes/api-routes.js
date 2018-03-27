@@ -111,5 +111,18 @@ module.exports = function (app) {
             res.json(dbPin);
         });
     });
+
+    // POST route for saving new feedback.
+    // ===============================================================================================
+    app.post("/api/feedback", function (req, res) {
+
+        db.Feedback.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            feedback: req.body.feedback
+        }).then(function (dbFeedback) {
+            res.json(dbFeedback);
+        });
+    });
     
 }; //end of export
